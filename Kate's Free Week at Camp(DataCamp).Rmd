@@ -14,7 +14,8 @@ Try executing this chunk by clicking the *Run* button within the chunk or by pla
 3. Variable assignment
 
 4. Basic data types in R
-5. placeholder
+5. Create a vector
+
 6. placeholder  
 7. placeholder
 8. placeholder
@@ -134,10 +135,19 @@ class(my_logical)
 ```
 
 
+# 5. Create a vector
 
+Examples of different vectors- different lists of variables, discrete to their own data type:
 
+```{r}
+numeric_vector <- c(1, 10, 49)
+character_vector <- c("a", "b", "c")
 
+# Complete the code for boolean_vector
+boolean_vector <- c(TRUE, FALSE, TRUE)
+```
 
+The examples above show the concatenate tool
 
 
 
