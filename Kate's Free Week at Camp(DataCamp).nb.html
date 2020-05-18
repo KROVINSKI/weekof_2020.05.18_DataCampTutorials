@@ -1757,9 +1757,15 @@ summary {
 <li>Introduction</li>
 <li>Arithmetic with R<br />
 </li>
+<li><p>Variable assignment</p></li>
+<li>Basic data types in R</li>
+<li>placeholder</li>
+<li>placeholder<br />
+</li>
 <li>placeholder</li>
 <li>placeholder</li>
 <li>placeholder</li>
+<li><p>placeholder</p></li>
 </ol>
 </div>
 <div id="introduction" class="section level1">
@@ -1802,13 +1808,89 @@ summary {
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
+</div>
+<div id="variable-assignment" class="section level1">
+<h1>3. Variable assignment</h1>
+<p>A basic concept in (statistical) programming is called a variable.</p>
+<p>A variable allows you to store a value (e.g. 4) or an object (e.g. a function description) in R. You can then later use this variable’s name to easily access the value or the object that is stored within this variable.</p>
+<p>Example</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubXlfdmFyIDwtIDRcblxuYGBgIn0= -->
+<pre class="r"><code>my_var &lt;- 4
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Futher Examples</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBBc3NpZ24gdGhlIHZhbHVlIDQyIHRvIHhcbnggPC0gNDIgXG5cbiMgUHJpbnQgb3V0IHRoZSB2YWx1ZSBvZiB0aGUgdmFyaWFibGUgeFxueFxuYGBgIn0= -->
+<pre class="r"><code># Assign the value 42 to x
+x &lt;- 42 
+
+# Print out the value of the variable x
+x</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>the number 42, the valye of the x variable should be displayed</p>
+<div id="arithmetic-with-variables" class="section level2">
+<h2>Arithmetic with variables</h2>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBBc3NpZ24gYSB2YWx1ZSB0byB0aGUgdmFyaWFibGVzIG15X2FwcGxlcyBhbmQgbXlfb3Jhbmdlc1xubXlfYXBwbGVzIDwtIDVcbm15X29yYW5nZXMgPC0gNlxuXG4jIEFkZCB0aGVzZSB0d28gdmFyaWFibGVzIHRvZ2V0aGVyXG5teV9hcHBsZXMgKyBteV9vcmFuZ2VzXG5cbiMgQ3JlYXRlIHRoZSB2YXJpYWJsZSBteV9mcnVpdFxubXlfZnJ1aXQ8LSBteV9hcHBsZXMgKyBteV9vcmFuZ2VzXG5gYGAifQ== -->
+<pre class="r"><code># Assign a value to the variables my_apples and my_oranges
+my_apples &lt;- 5
+my_oranges &lt;- 6
+
+# Add these two variables together
+my_apples + my_oranges
+
+# Create the variable my_fruit
+my_fruit&lt;- my_apples + my_oranges</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+</div>
+<div id="basic-data-types-in-r" class="section level1">
+<h1>4. Basic Data Types in R</h1>
+<p>R works with numerous data types. Some of the most basic types to get started are:</p>
+<ul>
+<li>Decimal values like 4.5 are called numerics.</li>
+<li>Natural numbers like 4 are called integers. Integers are also numerics.</li>
+<li>Boolean values (TRUE or FALSE) are called logical.</li>
+<li>Text (or string) values are called characters.</li>
+</ul>
+<p>Important not to mix data types when doing commands</p>
+<p>Example of how to check data classes</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBEZWNsYXJlIHZhcmlhYmxlcyBvZiBkaWZmZXJlbnQgdHlwZXNcbm15X251bWVyaWMgPC0gNDJcbm15X2NoYXJhY3RlciA8LSBcInVuaXZlcnNlXCJcbm15X2xvZ2ljYWwgPC0gRkFMU0UgXG5cbiMgQ2hlY2sgY2xhc3Mgb2YgbXlfbnVtZXJpY1xuY2xhc3MobXlfbnVtZXJpYylcblxuIyBDaGVjayBjbGFzcyBvZiBteV9jaGFyYWN0ZXJcbmNsYXNzKG15X2NoYXJhY3RlcilcblxuIyBDaGVjayBjbGFzcyBvZiBteV9sb2dpY2FsXG5jbGFzcyhteV9sb2dpY2FsKVxuYGBgIn0= -->
+<pre class="r"><code># Declare variables of different types
+my_numeric &lt;- 42
+my_character &lt;- &quot;universe&quot;
+my_logical &lt;- FALSE 
+
+# Check class of my_numeric
+class(my_numeric)
+
+# Check class of my_character
+class(my_character)
+
+# Check class of my_logical
+class(my_logical)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
 <p>Add a new chunk by clicking the <em>Insert Chunk</em> button on the toolbar or by pressing <em>Cmd+Option+I</em>.</p>
 <p>When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the <em>Preview</em> button or press <em>Cmd+Shift+K</em> to preview the HTML file).</p>
 <p>The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike <em>Knit</em>, <em>Preview</em> does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.</p>
 <!-- rnb-text-end -->
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiS2F0ZSdzIEZyZWUgV2VlayBhdCBDYW1wOiBEYXRhQ2FtcCIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKVGhpcyBpcyBhbiBbUiBNYXJrZG93bl0oaHR0cDovL3JtYXJrZG93bi5yc3R1ZGlvLmNvbSkgTm90ZWJvb2suIFdoZW4geW91IGV4ZWN1dGUgY29kZSB3aXRoaW4gdGhlIG5vdGVib29rLCB0aGUgcmVzdWx0cyBhcHBlYXIgYmVuZWF0aCB0aGUgY29kZS4gCgpUcnkgZXhlY3V0aW5nIHRoaXMgY2h1bmsgYnkgY2xpY2tpbmcgdGhlICpSdW4qIGJ1dHRvbiB3aXRoaW4gdGhlIGNodW5rIG9yIGJ5IHBsYWNpbmcgeW91ciBjdXJzb3IgaW5zaWRlIGl0IGFuZCBwcmVzc2luZyAqQ21kK1NoaWZ0K0VudGVyKi4gCgoKIyBUYWJsZSBvZiBDb250ZW50cwoxLiBJbnRyb2R1Y3Rpb24KMi4gQXJpdGhtZXRpYyB3aXRoIFIgIAozLiBwbGFjZWhvbGRlcgo0LiBwbGFjZWhvbGRlcgo1LiBwbGFjZWhvbGRlcgogCiAKIAogCiMgMS4gSW50cm9kdWN0aW9uIAoKUiBtYWtlcyB1c2Ugb2YgdGhlICMgc2lnbiB0byBhZGQgY29tbWVudHMsIHNvIHRoYXQgeW91IGFuZCBvdGhlcnMgY2FuIHVuZGVyc3RhbmQgd2hhdCB0aGUgUiBjb2RlIGlzIGFib3V0LiBKdXN0IGxpa2UgVHdpdHRlciEgQ29tbWVudHMgYXJlIG5vdCBydW4gYXMgUiBjb2RlLCBzbyB0aGV5IHdpbGwgbm90IGluZmx1ZW5jZSB5b3VyIHJlc3VsdC4gCgpgYGB7cn0KIyBTaW1wbGUgVGV4dCBubyBjb21tYW5kCmBgYAoKZnV0aGVyIGV4YW1wbGVzCgpgYGB7cn0KIyBDYWxjdWxhdGUgMyArIDQKIyAzICsgNApgYGAKCgojIDIuIEFyaXRobWV0aWMgd2l0aCBSIAoKSW4gaXRzIG1vc3QgYmFzaWMgZm9ybSwgUiBjYW4gYmUgdXNlZCBhcyBhIHNpbXBsZSBjYWxjdWxhdG9yLiBDb25zaWRlciB0aGUgZm9sbG93aW5nIGFyaXRobWV0aWMgb3BlcmF0b3JzOgoKQWRkaXRpb246ICsKU3VidHJhY3Rpb246IC0KTXVsdGlwbGljYXRpb246ICoKRGl2aXNpb246IC8KRXhwb25lbnRpYXRpb246IF4KTW9kdWxvOiAlJQoKClRoZSBeIG9wZXJhdG9yIHJhaXNlcyB0aGUgbnVtYmVyIHRvIGl0cyBsZWZ0IHRvIHRoZSBwb3dlciBvZiB0aGUgbnVtYmVyIHRvIGl0cyByaWdodDogZm9yIGV4YW1wbGUgM14yIGlzIDkuCgpgYGB7cn0KM14yCmBgYAoKVGhlIG1vZHVsbyByZXR1cm5zIHRoZSByZW1haW5kZXIgb2YgdGhlIGRpdmlzaW9uIG9mIHRoZSBudW1iZXIgdG8gdGhlIGxlZnQgYnkgdGhlIG51bWJlciBvbiBpdHMgcmlnaHQsIGZvciBleGFtcGxlIDUgbW9kdWxvIDMgb3IgNSAlJSAzIGlzIDIuCgpgYGB7cn0KNSUlMwpgYGAKCgoKCgoKCgoKCgoKCgoKCgpBZGQgYSBuZXcgY2h1bmsgYnkgY2xpY2tpbmcgdGhlICpJbnNlcnQgQ2h1bmsqIGJ1dHRvbiBvbiB0aGUgdG9vbGJhciBvciBieSBwcmVzc2luZyAqQ21kK09wdGlvbitJKi4KCldoZW4geW91IHNhdmUgdGhlIG5vdGVib29rLCBhbiBIVE1MIGZpbGUgY29udGFpbmluZyB0aGUgY29kZSBhbmQgb3V0cHV0IHdpbGwgYmUgc2F2ZWQgYWxvbmdzaWRlIGl0IChjbGljayB0aGUgKlByZXZpZXcqIGJ1dHRvbiBvciBwcmVzcyAqQ21kK1NoaWZ0K0sqIHRvIHByZXZpZXcgdGhlIEhUTUwgZmlsZSkuIAoKVGhlIHByZXZpZXcgc2hvd3MgeW91IGEgcmVuZGVyZWQgSFRNTCBjb3B5IG9mIHRoZSBjb250ZW50cyBvZiB0aGUgZWRpdG9yLiBDb25zZXF1ZW50bHksIHVubGlrZSAqS25pdCosICpQcmV2aWV3KiBkb2VzIG5vdCBydW4gYW55IFIgY29kZSBjaHVua3MuIEluc3RlYWQsIHRoZSBvdXRwdXQgb2YgdGhlIGNodW5rIHdoZW4gaXQgd2FzIGxhc3QgcnVuIGluIHRoZSBlZGl0b3IgaXMgZGlzcGxheWVkLgoK</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiS2F0ZSdzIEZyZWUgV2VlayBhdCBDYW1wOiBEYXRhQ2FtcCIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKVGhpcyBpcyBhbiBbUiBNYXJrZG93bl0oaHR0cDovL3JtYXJrZG93bi5yc3R1ZGlvLmNvbSkgTm90ZWJvb2suIFdoZW4geW91IGV4ZWN1dGUgY29kZSB3aXRoaW4gdGhlIG5vdGVib29rLCB0aGUgcmVzdWx0cyBhcHBlYXIgYmVuZWF0aCB0aGUgY29kZS4gCgpUcnkgZXhlY3V0aW5nIHRoaXMgY2h1bmsgYnkgY2xpY2tpbmcgdGhlICpSdW4qIGJ1dHRvbiB3aXRoaW4gdGhlIGNodW5rIG9yIGJ5IHBsYWNpbmcgeW91ciBjdXJzb3IgaW5zaWRlIGl0IGFuZCBwcmVzc2luZyAqQ21kK1NoaWZ0K0VudGVyKi4gCgoKIyBUYWJsZSBvZiBDb250ZW50cwoxLiBJbnRyb2R1Y3Rpb24KMi4gQXJpdGhtZXRpYyB3aXRoIFIgIAozLiBWYXJpYWJsZSBhc3NpZ25tZW50Cgo0LiBCYXNpYyBkYXRhIHR5cGVzIGluIFIKNS4gcGxhY2Vob2xkZXIKNi4gcGxhY2Vob2xkZXIgIAo3LiBwbGFjZWhvbGRlcgo4LiBwbGFjZWhvbGRlcgo5LiBwbGFjZWhvbGRlcgoxMC4gcGxhY2Vob2xkZXIKIAogCiMgMS4gSW50cm9kdWN0aW9uIAoKUiBtYWtlcyB1c2Ugb2YgdGhlICMgc2lnbiB0byBhZGQgY29tbWVudHMsIHNvIHRoYXQgeW91IGFuZCBvdGhlcnMgY2FuIHVuZGVyc3RhbmQgd2hhdCB0aGUgUiBjb2RlIGlzIGFib3V0LiBKdXN0IGxpa2UgVHdpdHRlciEgQ29tbWVudHMgYXJlIG5vdCBydW4gYXMgUiBjb2RlLCBzbyB0aGV5IHdpbGwgbm90IGluZmx1ZW5jZSB5b3VyIHJlc3VsdC4gCgpgYGB7cn0KIyBTaW1wbGUgVGV4dCBubyBjb21tYW5kCmBgYAoKZnV0aGVyIGV4YW1wbGVzCgpgYGB7cn0KIyBDYWxjdWxhdGUgMyArIDQKIyAzICsgNApgYGAKCgojIDIuIEFyaXRobWV0aWMgd2l0aCBSIAoKSW4gaXRzIG1vc3QgYmFzaWMgZm9ybSwgUiBjYW4gYmUgdXNlZCBhcyBhIHNpbXBsZSBjYWxjdWxhdG9yLiBDb25zaWRlciB0aGUgZm9sbG93aW5nIGFyaXRobWV0aWMgb3BlcmF0b3JzOgoKQWRkaXRpb246ICsKU3VidHJhY3Rpb246IC0KTXVsdGlwbGljYXRpb246ICoKRGl2aXNpb246IC8KRXhwb25lbnRpYXRpb246IF4KTW9kdWxvOiAlJQoKClRoZSBeIG9wZXJhdG9yIHJhaXNlcyB0aGUgbnVtYmVyIHRvIGl0cyBsZWZ0IHRvIHRoZSBwb3dlciBvZiB0aGUgbnVtYmVyIHRvIGl0cyByaWdodDogZm9yIGV4YW1wbGUgM14yIGlzIDkuCgpgYGB7cn0KM14yCmBgYAoKVGhlIG1vZHVsbyByZXR1cm5zIHRoZSByZW1haW5kZXIgb2YgdGhlIGRpdmlzaW9uIG9mIHRoZSBudW1iZXIgdG8gdGhlIGxlZnQgYnkgdGhlIG51bWJlciBvbiBpdHMgcmlnaHQsIGZvciBleGFtcGxlIDUgbW9kdWxvIDMgb3IgNSAlJSAzIGlzIDIuCgpgYGB7cn0KNSUlMwpgYGAKCgojIDMuIFZhcmlhYmxlIGFzc2lnbm1lbnQKCkEgYmFzaWMgY29uY2VwdCBpbiAoc3RhdGlzdGljYWwpIHByb2dyYW1taW5nIGlzIGNhbGxlZCBhIHZhcmlhYmxlLgoKQSB2YXJpYWJsZSBhbGxvd3MgeW91IHRvIHN0b3JlIGEgdmFsdWUgKGUuZy4gNCkgb3IgYW4gb2JqZWN0IChlLmcuIGEgZnVuY3Rpb24gZGVzY3JpcHRpb24pIGluIFIuIFlvdSBjYW4gdGhlbiBsYXRlciB1c2UgdGhpcyB2YXJpYWJsZSdzIG5hbWUgdG8gZWFzaWx5IGFjY2VzcyB0aGUgdmFsdWUgb3IgdGhlIG9iamVjdCB0aGF0IGlzIHN0b3JlZCB3aXRoaW4gdGhpcyB2YXJpYWJsZS4KCkV4YW1wbGUgCgpgYGB7cn0KbXlfdmFyIDwtIDQKCmBgYAoKCkZ1dGhlciBFeGFtcGxlcwoKYGBge3J9CiMgQXNzaWduIHRoZSB2YWx1ZSA0MiB0byB4CnggPC0gNDIgCgojIFByaW50IG91dCB0aGUgdmFsdWUgb2YgdGhlIHZhcmlhYmxlIHgKeApgYGAKCnRoZSBudW1iZXIgNDIsIHRoZSB2YWx5ZSBvZiB0aGUgeCB2YXJpYWJsZSBzaG91bGQgYmUgZGlzcGxheWVkCgojIyBBcml0aG1ldGljIHdpdGggdmFyaWFibGVzCgpgYGB7cn0KIyBBc3NpZ24gYSB2YWx1ZSB0byB0aGUgdmFyaWFibGVzIG15X2FwcGxlcyBhbmQgbXlfb3JhbmdlcwpteV9hcHBsZXMgPC0gNQpteV9vcmFuZ2VzIDwtIDYKCiMgQWRkIHRoZXNlIHR3byB2YXJpYWJsZXMgdG9nZXRoZXIKbXlfYXBwbGVzICsgbXlfb3JhbmdlcwoKIyBDcmVhdGUgdGhlIHZhcmlhYmxlIG15X2ZydWl0Cm15X2ZydWl0PC0gbXlfYXBwbGVzICsgbXlfb3JhbmdlcwpgYGAKCgojIDQuIEJhc2ljIERhdGEgVHlwZXMgaW4gUgoKUiB3b3JrcyB3aXRoIG51bWVyb3VzIGRhdGEgdHlwZXMuIFNvbWUgb2YgdGhlIG1vc3QgYmFzaWMgdHlwZXMgdG8gZ2V0IHN0YXJ0ZWQgYXJlOgoKKiBEZWNpbWFsIHZhbHVlcyBsaWtlIDQuNSBhcmUgY2FsbGVkIG51bWVyaWNzLgoqIE5hdHVyYWwgbnVtYmVycyBsaWtlIDQgYXJlIGNhbGxlZCBpbnRlZ2Vycy4gSW50ZWdlcnMgYXJlIGFsc28gbnVtZXJpY3MuCiogQm9vbGVhbiB2YWx1ZXMgKFRSVUUgb3IgRkFMU0UpIGFyZSBjYWxsZWQgbG9naWNhbC4KKiBUZXh0IChvciBzdHJpbmcpIHZhbHVlcyBhcmUgY2FsbGVkIGNoYXJhY3RlcnMuCgpJbXBvcnRhbnQgbm90IHRvIG1peCBkYXRhIHR5cGVzIHdoZW4gZG9pbmcgY29tbWFuZHMKCkV4YW1wbGUgb2YgaG93IHRvIGNoZWNrIGRhdGEgY2xhc3NlcwoKYGBge3J9CiMgRGVjbGFyZSB2YXJpYWJsZXMgb2YgZGlmZmVyZW50IHR5cGVzCm15X251bWVyaWMgPC0gNDIKbXlfY2hhcmFjdGVyIDwtICJ1bml2ZXJzZSIKbXlfbG9naWNhbCA8LSBGQUxTRSAKCiMgQ2hlY2sgY2xhc3Mgb2YgbXlfbnVtZXJpYwpjbGFzcyhteV9udW1lcmljKQoKIyBDaGVjayBjbGFzcyBvZiBteV9jaGFyYWN0ZXIKY2xhc3MobXlfY2hhcmFjdGVyKQoKIyBDaGVjayBjbGFzcyBvZiBteV9sb2dpY2FsCmNsYXNzKG15X2xvZ2ljYWwpCmBgYAoKCgoKCgoKCgoKQWRkIGEgbmV3IGNodW5rIGJ5IGNsaWNraW5nIHRoZSAqSW5zZXJ0IENodW5rKiBidXR0b24gb24gdGhlIHRvb2xiYXIgb3IgYnkgcHJlc3NpbmcgKkNtZCtPcHRpb24rSSouCgpXaGVuIHlvdSBzYXZlIHRoZSBub3RlYm9vaywgYW4gSFRNTCBmaWxlIGNvbnRhaW5pbmcgdGhlIGNvZGUgYW5kIG91dHB1dCB3aWxsIGJlIHNhdmVkIGFsb25nc2lkZSBpdCAoY2xpY2sgdGhlICpQcmV2aWV3KiBidXR0b24gb3IgcHJlc3MgKkNtZCtTaGlmdCtLKiB0byBwcmV2aWV3IHRoZSBIVE1MIGZpbGUpLiAKClRoZSBwcmV2aWV3IHNob3dzIHlvdSBhIHJlbmRlcmVkIEhUTUwgY29weSBvZiB0aGUgY29udGVudHMgb2YgdGhlIGVkaXRvci4gQ29uc2VxdWVudGx5LCB1bmxpa2UgKktuaXQqLCAqUHJldmlldyogZG9lcyBub3QgcnVuIGFueSBSIGNvZGUgY2h1bmtzLiBJbnN0ZWFkLCB0aGUgb3V0cHV0IG9mIHRoZSBjaHVuayB3aGVuIGl0IHdhcyBsYXN0IHJ1biBpbiB0aGUgZWRpdG9yIGlzIGRpc3BsYXllZC4KCg==</div>
 
 
 
