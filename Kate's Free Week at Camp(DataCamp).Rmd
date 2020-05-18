@@ -18,7 +18,8 @@ Try executing this chunk by clicking the *Run* button within the chunk or by pla
 
 6. Naming a Vector 
 7. Vector Selection: selection with brackets
-8. placeholder
+8. Selection by Comparison
+* Step 1
 9. placeholder
 10. placeholder
  
@@ -233,6 +234,92 @@ poker_midweek <- poker_vector[c(2,3,5)]
 print(poker_midweek)
 
 ```
+
+midweek poker to select continious elements from the list:
+
+c(2, 3, 4) can be abbreviated to2:4, which generates a vector with all natural numbers from 2 up to 4.
+
+So, another way to find the mid-week results is poker_vector[2:4]. Notice how the vector 2:4 is placed between the square brackets to select element 2 up to 4.
+
+Further example from the poker and roulette examples:
+
+```{r}
+# Poker and roulette winnings from Monday to Friday:
+poker_vector <- c(140, -50, 20, -120, 240)
+roulette_vector <- c(-24, -50, 100, -350, 10)
+days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
+names(poker_vector) <- days_vector
+names(roulette_vector) <- days_vector
+
+# Define a new variable based on a selection
+roulette_selection_vector <- roulette_vector[2:5]
+
+roulette_selection_vector
+```
+
+
+# 8. Selection by Comparison
+
+By making use of comparison operators, we can approach the previous question in a more proactive way.
+
+The (logical) comparison operators known to R are:
+
+< for less than
+> for greater than
+<= for less than or equal to
+>= for greater than or equal to
+== for equal to each other
+!= not equal to each other
+
+```{r}
+# Results should respond with "TRUE"
+6 > 5 
+```
+
+Can apply comparisons agruments to variables inside a list
+
+```{r}
+ c(4, 5, 6) > 5
+# [1] FALSE FALSE TRUE
+```
+
+
+Example of arithmetic and comparison agruments:
+
+```{r}
+# Poker and roulette winnings from Monday to Friday:
+poker_vector <- c(140, -50, 20, -120, 240)
+roulette_vector <- c(-24, -50, 100, -350, 10)
+days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
+names(poker_vector) <- days_vector
+names(roulette_vector) <- days_vector
+
+# Which days did you make money on poker?
+selection_vector <- (poker_vector>0)
+  
+# Print out selection_vector
+selection_vector
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
