@@ -13,10 +13,10 @@ Try executing this chunk by clicking the *Run* button within the chunk or by pla
 2. Arithmetic with R  
 3. Variable assignment
 
-4. Basic data types in R
-5. Create a vector
+4. Basic Data Types in R
+5. Create a Vector
 
-6. placeholder  
+6. Naming a Vector 
 7. placeholder
 8. placeholder
 9. placeholder
@@ -148,6 +148,36 @@ boolean_vector <- c(TRUE, FALSE, TRUE)
 ```
 
 The examples above show the concatenate tool
+
+
+# 6. Naming a Vector
+
+
+As a data analyst, it is important to have a clear view on the data that you are using. Understanding what each element refers to is therefore essential.
+
+You can give a name to the elements of a vector with the names() function. 
+
+Example
+
+```{r}
+some_vector <- c("John Doe", "poker player")
+names(some_vector) <- c("Name", "Profession")
+```
+
+This code first creates a vector some_vector and then gives the two elements a name. The first element is assigned the name Name, while the second element is labeled Profession.
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
