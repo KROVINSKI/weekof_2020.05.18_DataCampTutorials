@@ -343,7 +343,7 @@ The argument byrow indicates that the matrix is filled by the rows. If we want t
 The third argument nrow indicates that the matrix should have three rows.
 
 
-# 9.1 Analyze Matrices
+## 9.1 Analyze Matrices
 
 example problem description:
 Construct a matrix with 3 rows, where each row represents a movie. Use the matrix() function to do this. The first argument is the vector box_office, containing all box office figures. Next, you'll have to specify nrow = 3 and byrow = TRUE. Name the resulting matrix star_wars_matrix.
@@ -362,11 +362,33 @@ star_wars_matrix <- matrix(box_office, byrow= TRUE, nrow = 3)
 
 star_wars_matrix
 
-
-
 ```
 
 
+## 9.2 Naming a Matrix
+Similar to vectors, you can add names for the rows and the columns of a matrix
+
+rownames(my_matrix) <- row_names_vector
+colnames(my_matrix) <- col_names_vector
+
+can apply arithmetic to the matrices
+
+```{r}
+# Construct star_wars_matrix
+box_office <- c(460.998, 314.4, 290.475, 247.900, 309.306, 165.8)
+star_wars_matrix <- matrix(box_office, nrow = 3, byrow = TRUE,
+                           dimnames = list(c("A New Hope", "The Empire Strikes Back", "Return of the Jedi"), 
+                                           c("US", "non-US")))
+
+# Calculate worldwide box office figures
+worldwide_vector <- rowSums(star_wars_matrix)
+
+# > worldwide_vector
+#              A New Hope The Empire Strikes Back      Return of the Jedi 
+#                 775.398                 538.375                 475.106
+
+worldwide_vector
+```
 
 
 
