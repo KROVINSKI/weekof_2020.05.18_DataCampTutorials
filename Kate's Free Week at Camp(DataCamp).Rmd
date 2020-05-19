@@ -20,8 +20,11 @@ Try executing this chunk by clicking the *Run* button within the chunk or by pla
 7. Vector Selection: selection with brackets
 8. Selection by Comparison
 * Step 1
-9. placeholder
-10. placeholder
+* Step 2
+
+9. Matrix - what is a matrix?
+
+
  
  
 # 1. Introduction 
@@ -320,6 +323,47 @@ selection_vector
 # Select from poker_vector these days
 poker_winning_days <- (poker_vector[selection_vector])
 poker_winning_days
+```
+
+
+# 9. Matrix - what is a matrix?
+
+n R, a matrix is a collection of elements of the same data type (numeric, character, or logical) arranged into a fixed number of rows and columns. Since you are only working with rows and columns, a matrix is called two-dimensional.
+
+You can construct a matrix in R with the matrix() function. Consider the following example:
+
+```{r}
+matrix(1:9, byrow = TRUE, nrow = 3)
+```
+
+In the matrix() function:
+
+The first argument is the collection of elements that R will arrange into the rows and columns of the matrix. Here, we use 1:9 which is a shortcut for c(1, 2, 3, 4, 5, 6, 7, 8, 9).
+The argument byrow indicates that the matrix is filled by the rows. If we want the matrix to be filled by the columns, we just place byrow = FALSE.
+The third argument nrow indicates that the matrix should have three rows.
+
+
+# 9.1 Analyze Matrices
+
+example problem description:
+Construct a matrix with 3 rows, where each row represents a movie. Use the matrix() function to do this. The first argument is the vector box_office, containing all box office figures. Next, you'll have to specify nrow = 3 and byrow = TRUE. Name the resulting matrix star_wars_matrix.
+
+```{r}
+# Box office Star Wars (in millions!)
+new_hope <- c(460.998, 314.4)
+empire_strikes <- c(290.475, 247.900)
+return_jedi <- c(309.306, 165.8)
+
+# Create box_office
+box_office <- c(new_hope, empire_strikes, return_jedi)
+
+# Construct star_wars_matrix
+star_wars_matrix <- matrix(box_office, byrow= TRUE, nrow = 3)
+
+star_wars_matrix
+
+
+
 ```
 
 
