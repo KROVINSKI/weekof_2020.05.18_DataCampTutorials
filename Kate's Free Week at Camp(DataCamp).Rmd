@@ -560,11 +560,150 @@ In contrast, ordinal variables do have a natural ordering. Consider for example 
 ## 10.2 Factor Levels
 
 
+Factors often contain variables with specific factor levels. 
+However, sometimes you will want to change the names of these levels for clarity or other reasons. R allows you to do this with the function levels():
+
+```{r}
+levels(factor_vector) <- c("name1", "name2",...)
+```
+
+Example
+```{r}
+# Code to build factor_survey_vector
+survey_vector <- c("M", "F", "F", "M", "M")
+factor_survey_vector <- factor(survey_vector)
+
+# Specify the levels of factor_survey_vector
+levels(factor_survey_vector) <- c("Female", "Male")
+
+factor_survey_vector
+
+#Console view- Results
+# > # Code to build factor_survey_vector
+# > survey_vector <- c("M", "F", "F", "M", "M")
+# > factor_survey_vector <- factor(survey_vector)
+# > 
+# > # Specify the levels of factor_survey_vector
+# > levels(factor_survey_vector) <- c("Female", "Male")
+# > 
+# > factor_survey_vector
+# [1] Male   Female Female Male   Male  
+# Levels: Female Male
+
+```
 
 
+## 10.2 Summarizing a factor
+
+function to summarize a factor (among other things- will detail if a character or mode, etc)
+
+summmary()
 
 
+example
 
+```{r}
+# Build factor_survey_vector with clean levels
+survey_vector <- c("M", "F", "F", "M", "M")
+factor_survey_vector <- factor(survey_vector)
+levels(factor_survey_vector) <- c("Female", "Male")
+factor_survey_vector
+
+# Generate summary for survey_vector
+summary(survey_vector)
+
+# Generate summary for factor_survey_vector
+summary(factor_survey_vector)
+
+
+## Results- Console View
+
+# > # Build factor_survey_vector with clean levels
+# > survey_vector <- c("M", "F", "F", "M", "M")
+# > factor_survey_vector <- factor(survey_vector)
+# > levels(factor_survey_vector) <- c("Female", "Male")
+# > factor_survey_vector
+# [1] Male   Female Female Male   Male  
+# Levels: Female Male
+# > 
+# > # Generate summary for survey_vector
+# > summary(survey_vector)
+#    Length     Class      Mode 
+#         5 character character
+# > 
+# > # Generate summary for factor_survey_vector
+# > summary(factor_survey_vector)
+# Female   Male 
+#      2      3
+
+```
+
+
+## 10.3 Ordered Factors
+
+Ordering factors will involve converting a nomial factor to an ordinal factor
+"Male" and "Female" are examples of unordered (or nominal) factor levels
+
+R attaches an equal value to the levels for such factors
+
+example:
+
+```{r}
+# Create speed_vector
+speed_vector <- c("medium", "slow", "slow", "medium", "fast")
+
+## Results - Console View
+# > speed_vector <- c("medium", "slow", "slow", "medium", "fast")
+# > speed_vector
+# [1] "medium" "slow"   "slow"   "medium" "fast"
+
+```
+
+
+converting a nomial factor to an ordinal factor
+
+To create an ordered factor, you have to add two additional arguments: ordered and levels.
+
+factor(some_vector,
+       ordered = TRUE,
+       levels = c("lev1", "lev2" ...))
+       
+By setting the argument ordered to TRUE in the function factor(), you indicate that the factor is ordered. With the argument levels you give the values of the factor in the correct order.
+
+Example
+```{r}
+# Create speed_vector
+speed_vector <- c("medium", "slow", "slow", "medium", "fast")
+
+# Convert speed_vector to ordered factor vector
+factor_speed_vector <- factor(speed_vector,
+                              ordered = TRUE,
+                              levels = c("slow", "medium", "fast"))
+
+# Print factor_speed_vector
+factor_speed_vector
+summary(factor_speed_vector)
+
+
+#Results- Console View
+
+# > # Create speed_vector
+# > speed_vector <- c("medium", "slow", "slow", "medium", "fast")
+# > 
+# > # Convert speed_vector to ordered factor vector
+# > factor_speed_vector <- factor(speed_vector,
+#                                 ordered = TRUE,
+#                                 levels = c("slow", "medium", "fast"))
+# > 
+# > # Print factor_speed_vector
+# > factor_speed_vector
+# [1] medium slow   slow   medium fast  
+# Levels: slow < medium < fast
+# > summary(factor_speed_vector)
+#   slow medium   fast 
+#      2      2      1
+
+```
 
 
 
