@@ -24,6 +24,7 @@ Try executing this chunk by clicking the *Run* button within the chunk or by pla
 
 9. Matrix - what is a matrix?
 10. Factors - what are they and when you should use them? 
+11. Dataframes
 
 
  
@@ -706,10 +707,24 @@ summary(factor_speed_vector)
 ```
 
 
+# 11. Dataframes
+
+A data frame has the variables of a data set as columns and the observations as rows.
+
+important functions:
+
+head()
+tail()
+str()
+
+the function head() enables you to show the first observations of a data frame. Similarly, the function tail() prints out the last observations in your data set.
+
+Both head() and tail() print a top line called the 'header', which contains the names of the different variables in your data set.
+
+The function str() shows you the structure of your data set.
 
 
-
-
+## 11.1 Creating a data frame
 
 
 
