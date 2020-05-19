@@ -390,6 +390,8 @@ worldwide_vector <- rowSums(star_wars_matrix)
 worldwide_vector
 ```
 
+# 9.3 Adding a Column
+
 You can add a column or multiple columns to a matrix with the cbind() function
 
 Example of adding columns with the column bind function:
@@ -421,8 +423,30 @@ all_wars_matrix
 ```
 
 
+# 9.4 Adding a Row
 
 
+1. Function to review cbind()
+Usage
+cbind(..., deparse.level = 1)
+
+      
+
+2. New function - rbind() ~ similarly used to the previous function to add rows
+Usage
+rbind(..., deparse.level = 1)
+    S3 method for class 'data.frame'
+rbind(..., deparse.level = 1, make.row.names = TRUE,
+      stringsAsFactors = default.stringsAsFactors(), factor.exclude = NA)
+
+
+ls() is the "list objects" function
+
+Usage
+ls(name, pos = -1L, envir = as.environment(pos),
+   all.names = FALSE, pattern, sorted = TRUE)
+objects(name, pos= -1L, envir = as.environment(pos),
+        all.names = FALSE, pattern, sorted = TRUE)
 
 
 
