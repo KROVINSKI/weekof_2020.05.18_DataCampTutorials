@@ -23,6 +23,7 @@ Try executing this chunk by clicking the *Run* button within the chunk or by pla
 * Step 2
 
 9. Matrix - what is a matrix?
+10. Factors - what are they and when you should use them? 
 
 
  
@@ -390,7 +391,7 @@ worldwide_vector <- rowSums(star_wars_matrix)
 worldwide_vector
 ```
 
-# 9.3 Adding a Column
+## 9.3 Adding a Column
 
 You can add a column or multiple columns to a matrix with the cbind() function
 
@@ -423,7 +424,7 @@ all_wars_matrix
 ```
 
 
-# 9.4 Adding a Row
+## 9.4 Adding a Row
 
 
 1. Function to review cbind()
@@ -449,7 +450,59 @@ objects(name, pos= -1L, envir = as.environment(pos),
         all.names = FALSE, pattern, sorted = TRUE)
 
 
+## 9.5 Arithmetic and Columns in Matrices
 
+Review of functions used: cbind() & rbind()
+Both have related computational functions, colSums() has rowSums().
+
+example: 
+
+
+```{r}
+# all_wars_matrix is available in your workspace
+all_wars_matrix
+#                            US non-US
+# A New Hope              461.0  314.4
+# The Empire Strikes Back 290.5  247.9
+# Return of the Jedi      309.3  165.8
+# The Phantom Menace      474.5  552.5
+# Attack of the Clones    310.7  338.7
+# Revenge of the Sith     380.3  468.5
+
+# Total revenue for US and non-US
+total_revenue_vector <- colSums(all_wars_matrix)
+ 
+# Print out total_revenue_vector
+# total_revenue_vector
+#     US non-US 
+# 2226.3 2087.8
+```
+
+
+## 9.6 Selection of Matrix Elements
+
+```{r}
+# all_wars_matrix and ticket_prices_matrix are available in your workspace
+all_wars_matrix
+ticket_prices_matrix
+
+# Estimated number of visitors
+visitors <- all_wars_matrix / ticket_prices_matrix
+visitors
+
+# US visitors
+us_visitors <- visitors[,1]
+us_visitors
+
+# Average number of US visitors
+mean(us_visitors)
+```
+
+notice the selection by what was determined in brackets
+the more correct expression for multiplication is % * % 
+
+
+# 10. Factors - what are they and when you should use them? 
 
 
 
