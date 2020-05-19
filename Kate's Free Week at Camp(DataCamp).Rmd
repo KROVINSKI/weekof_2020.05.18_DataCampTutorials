@@ -504,6 +504,63 @@ the more correct expression for multiplication is % * %
 
 # 10. Factors - what are they and when you should use them? 
 
+The term factor refers to a statistical data type used to store categorical variables. The difference between a categorical variable and a continuous variable is that a categorical variable can belong to a limited number of categories. A continuous variable, on the other hand, can correspond to an infinite number of values.
+
+Continuous & Categorical
+
+It is important that R knows whether it is dealing with a continuous or a categorical variable
+
+Categorical variable example : sex
+
+Continuous variable example: temperature (demicals)
+
+
+To create factors in R, you make use of the function factor(). First thing that you have to do is create a vector that contains all the observations that belong to a limited number of categories. 
+
+
+```{r}
+## Code
+# Sex vector
+sex_vector <- c("Male", "Female", "Female", "Male", "Male")
+
+# Convert sex_vector to a factor
+factor_sex_vector <- factor(sex_vector)
+
+# Print out factor_sex_vector
+factor_sex_vector
+
+## Results
+# # Sex vector
+# > sex_vector <- c("Male", "Female", "Female", "Male", "Male")
+# > 
+# > # Convert sex_vector to a factor
+# > factor_sex_vector <- factor(sex_vector)
+# > 
+# > # Print out factor_sex_vector
+# > factor_sex_vector
+# [1] Male   Female Female Male   Male  
+# Levels: Female Male
+# > 
+
+```
+
+
+## 10.1 Factors - Types of Categorical Variables (2)
+1. Nominal (1 of 2)
+2. Ordinal (2 of 2)
+
+
+A nominal variable is a categorical variable without an implied order. This means that it is impossible to say that 'one is worth more than the other'. 
+
+For example, think of the categorical variable animals_vector with the categories 
+"Elephant", "Giraffe", "Donkey" and "Horse"
+
+In contrast, ordinal variables do have a natural ordering. Consider for example the categorical variable temperature_vector with the categories: "Low", "Medium" and "High". Here it is obvious that "Medium" stands above "Low", and "High" stands above "Medium".
+
+## 10.2 Factor Levels
+
+
+
 
 
 
