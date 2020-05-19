@@ -12,22 +12,15 @@ Try executing this chunk by clicking the *Run* button within the chunk or by pla
 1. Introduction
 2. Arithmetic with R  
 3. Variable assignment
-
 4. Basic Data Types in R
 5. Create a Vector
-
 6. Naming a Vector 
 7. Vector Selection: selection with brackets
 8. Selection by Comparison
-* Step 1
-* Step 2
-
 9. Matrix - what is a matrix?
 10. Factors - what are they and when you should use them? 
 11. Dataframes
-
-
- 
+12. Lists
  
 # 1. Introduction 
 
@@ -141,7 +134,10 @@ class(my_logical)
 ```
 
 
-# 5. Create a vector
+# 5. Vector
+Vectors (one dimensional array): can hold numeric, character or logical values. The elements in a vector all have the same data type
+
+## Create a vector
 
 Examples of different vectors- different lists of variables, discrete to their own data type:
 
@@ -329,6 +325,9 @@ poker_winning_days
 
 
 # 9. Matrix - what is a matrix?
+
+Matrices (two dimensional array): can hold numeric, character or logical values. The elements in a matrix all have the same data type
+
 
 n R, a matrix is a collection of elements of the same data type (numeric, character, or logical) arranged into a fixed number of rows and columns. Since you are only working with rows and columns, a matrix is called two-dimensional.
 
@@ -709,6 +708,8 @@ summary(factor_speed_vector)
 
 # 11. Dataframes
 
+Data frames (two-dimensional objects): can hold numeric, character or logical values. Within a column all elements have the same data type, but different columns can be of different data type.
+
 A data frame has the variables of a data set as columns and the observations as rows.
 
 important functions:
@@ -918,10 +919,47 @@ planets_df[positions, ]
 ```
 
 
+# 12. Lists
+
+A list in R allows you to gather a variety of objects under one name (that is, the name of the list) in an ordered way. These objects can be matrices, vectors, data frames, even other lists, etc. It is not even required that these objects are related to each other in any way.
 
 
+To construct a list you use the function list():
+
+```{r}
+#my_list <- list(comp1, comp2 ...)
+```
 
 
+Example 
+```{r}
+# Vector with numerics from 1 up to 10
+my_vector <- 1:10 
+
+# Matrix with numerics from 1 up to 9
+my_matrix <- matrix(1:9, ncol = 3)
+
+# First 10 elements of the built-in data frame mtcars
+my_df <- mtcars[1:10,]
+
+# Construct list with these different elements:
+my_list <- list(my_vector, my_matrix, my_df)
+
+# Console View - Results
+# 
+# > # Vector with numerics from 1 up to 10
+# > my_vector <- 1:10
+# > 
+# > # Matrix with numerics from 1 up to 9
+# > my_matrix <- matrix(1:9, ncol = 3)
+# > 
+# > # First 10 elements of the built-in data frame mtcars
+# > my_df <- mtcars[1:10,]
+# > 
+# > # Construct list with these different elements:
+# > my_list <- list(my_vector, my_matrix, my_df)
+
+```
 
 
 
