@@ -832,6 +832,94 @@ planets_df[1:5, "diameter"]
 ```
 
 
+Using the results of boolean expression to make selections in dataframes
+
+```{r}
+# planets_df and rings_vector are pre-loaded in your workspace
+planets_df
+rings_vector
+
+# Adapt the code to select all columns for planets with rings
+planets_df[rings_vector, ]
+
+# > planets_df[rings_vector, ]
+#      name      type diameter rotation rings
+# 5 Jupiter Gas giant   11.209     0.41  TRUE
+# 6  Saturn Gas giant    9.449     0.43  TRUE
+# 7  Uranus Gas giant    4.007    -0.72  TRUE
+# 8 Neptune Gas giant    3.883     0.67  TRUE
+# > 
+
+```
+
+
+## 11.3 Subsets of Dataframes
+
+function 
+subset(my_df, subset = some_condition)
+
+```{r}
+# planets_df is pre-loaded in your workspace
+planets_df
+# Select planets with diameter < 1
+subset(planets_df, subset = diameter < 1)
+
+# # Results - Console View
+# > # Select planets with diameter < 1
+# > subset(planets_df, subset = diameter < 1)
+#      name               type diameter rotation rings
+# 1 Mercury Terrestrial planet    0.382    58.64 FALSE
+# 2   Venus Terrestrial planet    0.949  -243.02 FALSE
+# 4    Mars Terrestrial planet    0.532     1.03 FALSE
+# > 
+
+```
+
+## 11.4 Sorting with Dataframe Variables
+
+In data analysis you can sort your data according to a certain variable in the data set. In R, this is done with the help of the function order().
+
+order() is a function that gives you the ranked position of each element when it is applied on a variable, such as a vector for example:
+
+```{r}
+a <- c(100, 10, 1000)
+order(a)
+# 2 1 3
+```
+
+Example 2: 
+```{r}
+# planets_df is pre-loaded in your workspace
+
+# Use order() to create positions
+positions <-  order(planets_df$diameter)
+
+# Use positions to sort planets_df
+planets_df[positions, ]
+
+# > # planets_df is pre-loaded in your workspace
+# > 
+# > # Use order() to create positions
+# > positions <-  order(planets_df$diameter)
+# > 
+# > # Use positions to sort planets_df
+# > planets_df[positions, ]
+#      name               type diameter rotation rings
+# 1 Mercury Terrestrial planet    0.382    58.64 FALSE
+# 4    Mars Terrestrial planet    0.532     1.03 FALSE
+# 2   Venus Terrestrial planet    0.949  -243.02 FALSE
+# 3   Earth Terrestrial planet    1.000     1.00 FALSE
+# 8 Neptune          Gas giant    3.883     0.67  TRUE
+# 7  Uranus          Gas giant    4.007    -0.72  TRUE
+# 6  Saturn          Gas giant    9.449     0.43  TRUE
+# 5 Jupiter          Gas giant   11.209     0.41  TRUE
+# > 
+# > 
+```
+
+
+
+
 
 
 
