@@ -11,7 +11,7 @@ output: html_notebook
 4. Logical Operators
 5. Reverse the result: !
 6. Conditional Statements
-7. placeholder
+7. While Loop
 8. placeholder
 9. placeholder
 10. placeholder
@@ -206,9 +206,65 @@ whereas
 the else statement needs an if conditional statement
 
 
+Figures with If, IF Else statements with results 
+
+![Figure of the "IF" Statement](/Users/katherinerovinski/GIT/weekof_2020.05.18_DataCampTutorials/ifstatement.png)
+
+![Figure of the "IF" Statement Results ](/Users/katherinerovinski/GIT/weekof_2020.05.18_DataCampTutorials/ifstatement_results.png)
 
 
+![Figure of the "Else" Statement Results ](/Users/katherinerovinski/GIT/weekof_2020.05.18_DataCampTutorials/elsestatement.png)
 
+
+![Figure of the "ELSE IF" Statement Results ](/Users/katherinerovinski/GIT/weekof_2020.05.18_DataCampTutorials/elseifstatement.png)
+
+## 6.1 Condition Statement "IF" Syntax
+
+Review of if statement syntax:
+```{r}
+
+if (condition)
+  expr
+
+```
+
+## 6.2 Condition Statement "ELSE" Syntax
+You can only use an else statement in combination with an if statement.
+
+The else statement does not require a condition; its corresponding code is simply run if all of the preceding conditions in the control structure are FALSE. 
+else syntax:
+
+```{r}
+if (condition) {
+  expr1
+} else {
+  expr2
+}
+```
+
+Else Statements examples: 
+
+```{r}
+if (number < 10) {
+  if (number < 5) {
+    result <- "extra small"
+  } else {
+    result <- "small"
+  }
+} else if (number < 100) {
+  result <- "medium"
+} else {
+  result <- "large"
+}
+print(result)
+```
+
+Have a look at the following statements:
+
+If number is set to 6, "small" gets printed to the console. CORRECT
+If number is set to 100, R prints out "medium". INCORRECT
+If number is set to 4, "extra small" gets printed out to the console. CORRECT
+If number is set to 2500, R will generate an error, as result will not be defined. INCORRECT
 
 
 
