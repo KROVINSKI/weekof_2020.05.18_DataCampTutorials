@@ -12,7 +12,7 @@ output: html_notebook
 5. Reverse the result: !
 6. Conditional Statements
 7. While Loop
-8. placeholder
+8. For Loop
 9. placeholder
 10. placeholder
 
@@ -265,6 +265,87 @@ If number is set to 6, "small" gets printed to the console. CORRECT
 If number is set to 100, R prints out "medium". INCORRECT
 If number is set to 4, "extra small" gets printed out to the console. CORRECT
 If number is set to 2500, R will generate an error, as result will not be defined. INCORRECT
+
+# 7. While Loop
+
+the while loop does not stop
+wants to go over and over again
+
+asside- ctr is a counter expression 
+
+
+![Figure of the "while loop" Statement Results ](/Users/katherinerovinski/GIT/weekof_2020.05.18_DataCampTutorials/whileloop1.png)
+
+
+
+![Figure of the "while loop" counting to 7 Statement Results ](/Users/katherinerovinski/GIT/weekof_2020.05.18_DataCampTutorials/whileloopto8.png)
+
+
+![Figure of the "while loop" counting Statement Results ](/Users/katherinerovinski/GIT/weekof_2020.05.18_DataCampTutorials/whileloopat8.png)
+
+
+have to give your while loop a place to stop
+
+
+
+![Figure of the "while loop" counting Statement Results ](/Users/katherinerovinski/GIT/weekof_2020.05.18_DataCampTutorials/breakstatement.png)
+
+
+
+Example of while loop:
+```{r}
+# Initialize the speed variable
+speed <- 64
+
+# Code the while loop
+while (speed > 30) {
+  print("Slow down!")
+  speed <- speed - 7
+}
+
+# Print out the speed variable
+speed
+```
+
+Example of giving a break statement for the loop:
+
+```{r}
+# Initialize the speed variable
+speed <- 88
+
+while (speed > 30) {
+  print(paste("Your speed is", speed))
+  
+  # Break the while loop when speed exceeds 80
+  if (speed > 80) {
+    break
+  }
+  
+  if (speed > 48) {
+    print("Slow down big time!")
+    speed <- speed - 11
+  } else {
+    print("Slow down!")
+    speed <- speed - 6
+  }
+}
+```
+
+
+
+# 8. For Loop
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
