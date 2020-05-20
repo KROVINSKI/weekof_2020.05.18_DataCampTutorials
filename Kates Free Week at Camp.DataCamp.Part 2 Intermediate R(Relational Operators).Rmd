@@ -9,7 +9,7 @@ output: html_notebook
 2. Greater and less than
 3. Compare vectors & matrices
 4. Logical Operators
-5. placeholder
+5. Reverse the result: !
 6. placeholder
 7. placeholder
 8. placeholder
@@ -157,7 +157,63 @@ When the abersand is used twice for some reason it only reads the first element
 
 ![Figure 3 of the "OR" Operator](/Users/katherinerovinski/GIT/weekof_2020.05.18_DataCampTutorials/oror.png)
 
-    
+## 4.1 & and |    
+
+Example
+```{r}
+
+TRUE & TRUE
+FALSE | TRUE
+5 <= 5 & 2 < 3
+3 < 4 | 7 < 6
+
+# Console Results
+# > TRUE & TRUE
+# [1] TRUE
+# > FALSE | TRUE
+# [1] TRUE
+# > 5 <= 5 & 2 < 3
+# [1] TRUE
+# > 3 < 4 | 7 < 6
+# [1] TRUE
+
+```
+
+
+Like relational operators, logical operators work perfectly fine with vectors and matrices.
+
+
+# 5. Reverse the result: !
+
+
+On top of the & and | operators, you also learned about the ! operator, which negates a logical value. To refresh your memory, here are some R expressions that use !. They all evaluate to FALSE:
+
+Example
+
+```{r}
+!TRUE
+!(5 > 3)
+!!FALSE
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
