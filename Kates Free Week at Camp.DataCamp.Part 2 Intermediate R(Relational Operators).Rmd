@@ -10,7 +10,7 @@ output: html_notebook
 3. Compare vectors & matrices
 4. Logical Operators
 5. Reverse the result: !
-6. placeholder
+6. Conditional Statements
 7. placeholder
 8. placeholder
 9. placeholder
@@ -198,8 +198,12 @@ Example
 
 
 
+# 6. Conditional Statements
 
 
+if statement can be on it's own 
+whereas 
+the else statement needs an if conditional statement
 
 
 
