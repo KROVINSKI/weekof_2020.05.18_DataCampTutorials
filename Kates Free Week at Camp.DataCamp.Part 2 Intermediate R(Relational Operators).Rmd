@@ -375,6 +375,99 @@ nzchar is a fast way to find out if elements of a character vector are non-empty
 
 ## 8.2 For Loop "Index"
 
+Can loop based on the length of the items in a list
+
+
+![Figure of a "for loop" by the length of the list](/Users/katherinerovinski/GIT/weekof_2020.05.18_DataCampTutorials/looplistv2.png)
+
+![Figure of a "for loop" by the length of the list- index set](/Users/katherinerovinski/GIT/weekof_2020.05.18_DataCampTutorials/looplistbylengthofindex.png)
+
+You now gain positional information 
+
+
+![Figure of a "for loop" by the length of the list- index set](/Users/katherinerovinski/GIT/weekof_2020.05.18_DataCampTutorials/forloopindexpositionalinformation.png)
+
+## 8.3 Looping over a list
+
+Looping over a list- same as looping over a vector
+
+two different avenues:
+
+```{r}
+primes_list <- list(2, 3, 5, 7, 11, 13)
+
+# loop version 1
+for (p in primes_list) {
+  print(p)
+}
+
+# loop version 2
+for (i in 1:length(primes_list)) {
+  print(primes_list[[i]])
+}
+```
+
+
+Example with NYC data:
+
+```{r}
+# The nyc list is already specified
+nyc <- list(pop = 8405837, 
+            boroughs = c("Manhattan", "Bronx", "Brooklyn", "Queens", "Staten Island"), 
+            capital = FALSE)
+
+# Loop version 1
+for (info in nyc) {
+  print(info)
+}
+
+# Loop version 2
+for (i in 1:length(nyc)) {
+  print(nyc[[i]])
+}
+```
+
+Results
+
+```{r}
+# > # The nyc list is already specified
+# > nyc <- list(pop = 8405837, 
+#               boroughs = c("Manhattan", "Bronx", "Brooklyn", "Queens", "Staten Island"), 
+#               capital = FALSE)
+# > 
+# > # Loop version 1
+# > for (info in nyc) {
+#     print(info)
+#   }
+# [1] 8405837
+# [1] "Manhattan"     "Bronx"         "Brooklyn"      "Queens"       
+# [5] "Staten Island"
+# [1] FALSE
+# > 
+# > # Loop version 2
+# > for (i in 1:length(nyc)) {
+#     print(nyc[[i]])
+#   }
+# [1] 8405837
+# [1] "Manhattan"     "Bronx"         "Brooklyn"      "Queens"       
+# [5] "Staten Island"
+# [1] FALSE
+```
+
+
+## 8.4 Looping over a matrix
+
+Loop over a matrix
+
+Basic set up to loop over a matrix
+```{r}
+for (var1 in seq1) {
+  for (var2 in seq2) {
+    expr
+  }
+}
+```
+
 
 
 
