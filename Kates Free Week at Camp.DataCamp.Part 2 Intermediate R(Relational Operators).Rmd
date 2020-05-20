@@ -137,14 +137,18 @@ R's relational operators also work on vectors.
 R's ability to deal with different data structures for comparisons does not stop at vectors. Matrices and relational operators also work together seamlessly
 
 
+# 4. Logical Operators
 
 
+![Figure 1 of the "And" Operator](/Users/katherinerovinski/GIT/weekof_2020.05.18_DataCampTutorials/Andoperator.png)
 
 
+![Figure 2 of the "And" Operator](/Users/katherinerovinski/GIT/weekof_2020.05.18_DataCampTutorials/Andoperator2.png)
 
 
+![Figure 1 of the "OR" Operator](/Users/katherinerovinski/GIT/weekof_2020.05.18_DataCampTutorials/ORoperator.png)
 
-
+![Figure 2 of the "OR" Operator](/Users/katherinerovinski/GIT/weekof_2020.05.18_DataCampTutorials/ORoperator2.png)
 
 
 
