@@ -7,8 +7,8 @@ output: html_notebook
 # Table of Contents
 1. Equality
 2. Greater and less than
-3. placeholder
-4. placeholder
+3. Compare vectors & matrices
+4. Logical Operators
 5. placeholder
 6. placeholder
 7. placeholder
@@ -113,20 +113,29 @@ Make sure not to mix up == (comparison) and = (assignment), == is what need to c
 
 # 2. Greater and less than
 
+less than and greater than operators: < and >. 
+You can also add an equal sign to express less than or equal to or greater than or equal to, respectively. 
+Have a look at the following R expressions, that all evaluate to FALSE:
+
+```{r}
+(1 + 2) > 4
+"dog" < "Cats"
+TRUE <= FALSE
+```
+
+R determines the greater than relationship based on alphabetical order. 
+
+TRUE is treated as 1 for arithmetic, and FALSE is treated as 0. Therefore, FALSE < TRUE is TRUE.
 
 
 
 
+# 3. Compare vectors & Compare matrices
+R's relational operators also work on vectors.
 
 
+R's ability to deal with different data structures for comparisons does not stop at vectors. Matrices and relational operators also work together seamlessly
 
-
-
-
-
-
-
- Keep this in mind when solving the exercises in this chapter!
 
 
 
