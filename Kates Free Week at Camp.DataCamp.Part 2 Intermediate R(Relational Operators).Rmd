@@ -337,6 +337,59 @@ while (speed > 30) {
 
 
 
+![Figure of a "for loop" example](/Users/katherinerovinski/GIT/weekof_2020.05.18_DataCampTutorials/forloop.png)
+
+
+![Figure of a "for loop" example with results](/Users/katherinerovinski/GIT/weekof_2020.05.18_DataCampTutorials/forloop2.png)
+
+
+
+![Figure of a "for loop" over a list example](/Users/katherinerovinski/GIT/weekof_2020.05.18_DataCampTutorials/loopoverlist.png)
+
+## 8.1 For Loop Control Statements
+
+control statements are still important 
+break
+next 
+
+
+nchar - Count the Number of Characters (or Bytes or Width)
+
+```{r}
+nchar
+```
+
+
+Description
+nchar takes a character vector as an argument and returns a vector whose elements contain the sizes of the corresponding elements of x. Internally, it is a generic, for which methods can be defined.
+
+nzchar is a fast way to find out if elements of a character vector are non-empty strings.
+
+
+![Figure of a "for loop" over a list with a break statement](/Users/katherinerovinski/GIT/weekof_2020.05.18_DataCampTutorials/forloopbreakstatement.png)
+
+
+
+![Figure of a "for loop" over a list with a next statement](/Users/katherinerovinski/GIT/weekof_2020.05.18_DataCampTutorials/nextstatementforloop.png)
+
+
+## 8.2 For Loop "Index"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
