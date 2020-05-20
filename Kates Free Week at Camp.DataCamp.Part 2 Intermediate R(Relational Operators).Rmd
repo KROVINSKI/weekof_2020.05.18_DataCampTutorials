@@ -151,11 +151,13 @@ R's ability to deal with different data structures for comparisons does not stop
 ![Figure 2 of the "OR" Operator](/Users/katherinerovinski/GIT/weekof_2020.05.18_DataCampTutorials/ORoperator2.png)
 
 
+When the abersand is used twice for some reason it only reads the first element
 
+![Figure 3 of the "And" Operator](/Users/katherinerovinski/GIT/weekof_2020.05.18_DataCampTutorials/andand.png)
 
+![Figure 3 of the "OR" Operator](/Users/katherinerovinski/GIT/weekof_2020.05.18_DataCampTutorials/oror.png)
 
-
-
+    
 
 
 
