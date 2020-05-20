@@ -1749,14 +1749,135 @@ summary {
 
 
 <!-- rnb-text-begin -->
+<div id="table-of-contents" class="section level1">
+<h1>Table of Contents</h1>
+<ol style="list-style-type: decimal">
+<li>Equality</li>
+<li>Greater and less than</li>
+<li>placeholder</li>
+<li>placeholder</li>
+<li>placeholder</li>
+<li>placeholder</li>
+<li>placeholder</li>
+<li>placeholder</li>
+<li>placeholder</li>
+<li>placeholder</li>
+</ol>
+</div>
+<div id="equality" class="section level1">
+<h1>1. Equality</h1>
+<p>The most basic form of comparison is equality. Let’s briefly recap its syntax. The following statements all evaluate to TRUE.</p>
+<p>Example:</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuMyA9PSAoMiArIDEpXG5cImludGVybWVkaWF0ZVwiICE9IFwiclwiXG5UUlVFICE9IEZBTFNFXG5cIlJjaGl0ZWN0XCIgIT0gXCJyY2hpdGVjdFwiXG5cbmBgYCJ9 -->
+<pre class="r"><code>3 == (2 + 1)
+&quot;intermediate&quot; != &quot;r&quot;
+TRUE != FALSE
+&quot;Rchitect&quot; != &quot;rchitect&quot;
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Notice from the last expression that R is case sensitive: “R” is not equal to “r”.</p>
+<div id="instructions" class="section level2">
+<h2>1.1 Instructions</h2>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyMgSW5zdHJ1Y3Rpb25zXG4jIEluIHRoZSBlZGl0b3Igb24gdGhlIHJpZ2h0LCB3cml0ZSBSIGNvZGUgdG8gc2VlIGlmIFRSVUUgZXF1YWxzIEZBTFNFLlxuIyBMaWtld2lzZSwgY2hlY2sgaWYgLTYgKiAxNCBpcyBub3QgZXF1YWwgdG8gMTcgLSAxMDEuXG4jIE5leHQgdXA6IGNvbXBhcmlzb24gb2YgY2hhcmFjdGVyIHN0cmluZ3MuIEFzayBSIHdoZXRoZXIgdGhlIHN0cmluZ3MgXCJ1c2VSXCIgYW5kIFwidXNlclwiIGFyZSBlcXVhbC5cbiMgRmluYWxseSwgZmluZCBvdXQgd2hhdCBoYXBwZW5zIGlmIHlvdSBjb21wYXJlIGxvZ2ljYWxzIHRvIG51bWVyaWNzOiBhcmUgVFJVRSBhbmQgMSBlcXVhbD9cbmBgYCJ9 -->
+<pre class="r"><code>## Instructions
+# In the editor on the right, write R code to see if TRUE equals FALSE.
+# Likewise, check if -6 * 14 is not equal to 17 - 101.
+# Next up: comparison of character strings. Ask R whether the strings &quot;useR&quot; and &quot;user&quot; are equal.
+# Finally, find out what happens if you compare logicals to numerics: are TRUE and 1 equal?</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="a-user-input" class="section level2">
+<h2>1.1a User Input</h2>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBDb21wYXJpc29uIG9mIGxvZ2ljYWxzXG5UUlVFID0gRkFMU0VcblRSVUUgIT0gRkFMU0VcblxuIyBDb21wYXJpc29uIG9mIG51bWVyaWNzXG4oLTYgKiAxNClcbigxNyAtIDEwMSlcbigtNiAqIDE0KSAhPSAoMTcgLSAxMDEpXG4oLTYgKiAxNCkgPSAoMTcgLSAxMDEpXG5cbiMgQ29tcGFyaXNvbiBvZiBjaGFyYWN0ZXIgc3RyaW5nc1xuXCJ1c2VSXCIgPSBcInVzZXJcIlxuXG4jICMgQ29uc29sZSBSZXN1bHRzXG4jID4gIyBDb21wYXJlIGEgbG9naWNhbCB3aXRoIGEgbnVtZXJpY1xuIyA+IFRSVUUgPSAxXG4jIEVycm9yOiBpbnZhbGlkIChkb19zZXQpIGxlZnQtaGFuZCBzaWRlIHRvIGFzc2lnbm1lbnRcbiMgPiAjIENvbXBhcmlzb24gb2YgbG9naWNhbHNcbiMgPiBUUlVFID0gRkFMU0VcbiMgRXJyb3I6IGludmFsaWQgKGRvX3NldCkgbGVmdC1oYW5kIHNpZGUgdG8gYXNzaWdubWVudFxuIyA+IFRSVUUgIT0gRkFMU0VcbiMgWzFdIFRSVUVcbiMgPiBcbiMgPiAjIENvbXBhcmlzb24gb2YgbnVtZXJpY3NcbiMgPiAoLTYgKiAxNClcbiMgWzFdIC04NFxuIyA+ICgxNyAtIDEwMSlcbiMgWzFdIC04NFxuIyA+ICgtNiAqIDE0KSAhPSAoMTcgLSAxMDEpXG4jIFsxXSBGQUxTRVxuIyA+ICgtNiAqIDE0KSA9ICgxNyAtIDEwMSlcbiMgRXJyb3I6IHRhcmdldCBvZiBhc3NpZ25tZW50IGV4cGFuZHMgdG8gbm9uLWxhbmd1YWdlIG9iamVjdFxuIyA+IFxuIyA+ICMgQ29tcGFyaXNvbiBvZiBjaGFyYWN0ZXIgc3RyaW5nc1xuIyA+IFwidXNlUlwiID0gXCJ1c2VyXCJcbiMgPiBcbiMgPiAjIENvbXBhcmUgYSBsb2dpY2FsIHdpdGggYSBudW1lcmljXG4jID4gVFJVRSA9IDFcbiMgRXJyb3I6IGludmFsaWQgKGRvX3NldCkgbGVmdC1oYW5kIHNpZGUgdG8gYXNzaWdubWVudFxuXG5gYGAifQ== -->
+<pre class="r"><code># Comparison of logicals
+TRUE = FALSE
+TRUE != FALSE
+
+# Comparison of numerics
+(-6 * 14)
+(17 - 101)
+(-6 * 14) != (17 - 101)
+(-6 * 14) = (17 - 101)
+
+# Comparison of character strings
+&quot;useR&quot; = &quot;user&quot;
+
+# # Console Results
+# &gt; # Compare a logical with a numeric
+# &gt; TRUE = 1
+# Error: invalid (do_set) left-hand side to assignment
+# &gt; # Comparison of logicals
+# &gt; TRUE = FALSE
+# Error: invalid (do_set) left-hand side to assignment
+# &gt; TRUE != FALSE
+# [1] TRUE
+# &gt; 
+# &gt; # Comparison of numerics
+# &gt; (-6 * 14)
+# [1] -84
+# &gt; (17 - 101)
+# [1] -84
+# &gt; (-6 * 14) != (17 - 101)
+# [1] FALSE
+# &gt; (-6 * 14) = (17 - 101)
+# Error: target of assignment expands to non-language object
+# &gt; 
+# &gt; # Comparison of character strings
+# &gt; &quot;useR&quot; = &quot;user&quot;
+# &gt; 
+# &gt; # Compare a logical with a numeric
+# &gt; TRUE = 1
+# Error: invalid (do_set) left-hand side to assignment
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="b-final-solution" class="section level2">
+<h2>1.1b Final Solution</h2>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBDb21wYXJpc29uIG9mIGxvZ2ljYWxzXG5UUlVFID09IEZBTFNFXG5cbiMgQ29tcGFyaXNvbiBvZiBudW1lcmljc1xuLTYgKiAxNCAhPSAxNyAtIDEwMVxuXG4jIENvbXBhcmlzb24gb2YgY2hhcmFjdGVyIHN0cmluZ3NcblwidXNlUlwiID09IFwidXNlclwiXG5cbiMgQ29tcGFyZSBhIGxvZ2ljYWwgd2l0aCBhIG51bWVyaWNcblRSVUUgPT0gMVxuYGBgIn0= -->
+<pre class="r"><code># Comparison of logicals
+TRUE == FALSE
+
+# Comparison of numerics
+-6 * 14 != 17 - 101
+
+# Comparison of character strings
+&quot;useR&quot; == &quot;user&quot;
+
+# Compare a logical with a numeric
+TRUE == 1</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Note the use of the double equal sign</p>
+<p>Since TRUE coerces to 1 under the hood, TRUE == 1 evaluates to TRUE. Make sure not to mix up == (comparison) and = (assignment), == is what need to check the equality of R objects.</p>
+</div>
+</div>
+<div id="greater-and-less-than" class="section level1">
+<h1>2. Greater and less than</h1>
+<p>Keep this in mind when solving the exercises in this chapter!</p>
 <p>This is an <a href="http://rmarkdown.rstudio.com">R Markdown</a> Notebook. When you execute code within the notebook, the results appear beneath the code.</p>
 <p>Try executing this chunk by clicking the <em>Run</em> button within the chunk or by placing your cursor inside it and pressing <em>Cmd+Shift+Enter</em>.</p>
 <p>Add a new chunk by clicking the <em>Insert Chunk</em> button on the toolbar or by pressing <em>Cmd+Option+I</em>.</p>
 <p>When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the <em>Preview</em> button or press <em>Cmd+Shift+K</em> to preview the HTML file).</p>
 <p>The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike <em>Knit</em>, <em>Preview</em> does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.</p>
 <!-- rnb-text-end -->
+</div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiS2F0ZSdzIEZyZWUgV2VlayBhdCBDYW1wOiBEYXRhQ2FtcCwgUGFydCAyIEludGVybWVkaWF0ZSBSIHwgUmVsYXRpb25hbCBPcGVyYXRvcnMiCm91dHB1dDogaHRtbF9ub3RlYm9vawotLS0KCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKClRoaXMgaXMgYW4gW1IgTWFya2Rvd25dKGh0dHA6Ly9ybWFya2Rvd24ucnN0dWRpby5jb20pIE5vdGVib29rLiBXaGVuIHlvdSBleGVjdXRlIGNvZGUgd2l0aGluIHRoZSBub3RlYm9vaywgdGhlIHJlc3VsdHMgYXBwZWFyIGJlbmVhdGggdGhlIGNvZGUuIAoKVHJ5IGV4ZWN1dGluZyB0aGlzIGNodW5rIGJ5IGNsaWNraW5nIHRoZSAqUnVuKiBidXR0b24gd2l0aGluIHRoZSBjaHVuayBvciBieSBwbGFjaW5nIHlvdXIgY3Vyc29yIGluc2lkZSBpdCBhbmQgcHJlc3NpbmcgKkNtZCtTaGlmdCtFbnRlciouIAoKCgpBZGQgYSBuZXcgY2h1bmsgYnkgY2xpY2tpbmcgdGhlICpJbnNlcnQgQ2h1bmsqIGJ1dHRvbiBvbiB0aGUgdG9vbGJhciBvciBieSBwcmVzc2luZyAqQ21kK09wdGlvbitJKi4KCldoZW4geW91IHNhdmUgdGhlIG5vdGVib29rLCBhbiBIVE1MIGZpbGUgY29udGFpbmluZyB0aGUgY29kZSBhbmQgb3V0cHV0IHdpbGwgYmUgc2F2ZWQgYWxvbmdzaWRlIGl0IChjbGljayB0aGUgKlByZXZpZXcqIGJ1dHRvbiBvciBwcmVzcyAqQ21kK1NoaWZ0K0sqIHRvIHByZXZpZXcgdGhlIEhUTUwgZmlsZSkuIAoKVGhlIHByZXZpZXcgc2hvd3MgeW91IGEgcmVuZGVyZWQgSFRNTCBjb3B5IG9mIHRoZSBjb250ZW50cyBvZiB0aGUgZWRpdG9yLiBDb25zZXF1ZW50bHksIHVubGlrZSAqS25pdCosICpQcmV2aWV3KiBkb2VzIG5vdCBydW4gYW55IFIgY29kZSBjaHVua3MuIEluc3RlYWQsIHRoZSBvdXRwdXQgb2YgdGhlIGNodW5rIHdoZW4gaXQgd2FzIGxhc3QgcnVuIGluIHRoZSBlZGl0b3IgaXMgZGlzcGxheWVkLgoK</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiS2F0ZSdzIEZyZWUgV2VlayBhdCBDYW1wOiBEYXRhQ2FtcCwgUGFydCAyIEludGVybWVkaWF0ZSBSIHwgUmVsYXRpb25hbCBPcGVyYXRvcnMiCm91dHB1dDogaHRtbF9ub3RlYm9vawotLS0KCgojIFRhYmxlIG9mIENvbnRlbnRzCjEuIEVxdWFsaXR5CjIuIEdyZWF0ZXIgYW5kIGxlc3MgdGhhbgozLiBwbGFjZWhvbGRlcgo0LiBwbGFjZWhvbGRlcgo1LiBwbGFjZWhvbGRlcgo2LiBwbGFjZWhvbGRlcgo3LiBwbGFjZWhvbGRlcgo4LiBwbGFjZWhvbGRlcgo5LiBwbGFjZWhvbGRlcgoxMC4gcGxhY2Vob2xkZXIKCgojIDEuIEVxdWFsaXR5ClRoZSBtb3N0IGJhc2ljIGZvcm0gb2YgY29tcGFyaXNvbiBpcyBlcXVhbGl0eS4gTGV0J3MgYnJpZWZseSByZWNhcCBpdHMgc3ludGF4LiBUaGUgZm9sbG93aW5nIHN0YXRlbWVudHMgYWxsIGV2YWx1YXRlIHRvIFRSVUUuCgpFeGFtcGxlOiAKCmBgYHtyfQozID09ICgyICsgMSkKImludGVybWVkaWF0ZSIgIT0gInIiClRSVUUgIT0gRkFMU0UKIlJjaGl0ZWN0IiAhPSAicmNoaXRlY3QiCgpgYGAKCk5vdGljZSBmcm9tIHRoZSBsYXN0IGV4cHJlc3Npb24gdGhhdCBSIGlzIGNhc2Ugc2Vuc2l0aXZlOiAiUiIgaXMgbm90IGVxdWFsIHRvICJyIi4KCiMjIDEuMSBJbnN0cnVjdGlvbnMKCmBgYHtyfQojIyBJbnN0cnVjdGlvbnMKIyBJbiB0aGUgZWRpdG9yIG9uIHRoZSByaWdodCwgd3JpdGUgUiBjb2RlIHRvIHNlZSBpZiBUUlVFIGVxdWFscyBGQUxTRS4KIyBMaWtld2lzZSwgY2hlY2sgaWYgLTYgKiAxNCBpcyBub3QgZXF1YWwgdG8gMTcgLSAxMDEuCiMgTmV4dCB1cDogY29tcGFyaXNvbiBvZiBjaGFyYWN0ZXIgc3RyaW5ncy4gQXNrIFIgd2hldGhlciB0aGUgc3RyaW5ncyAidXNlUiIgYW5kICJ1c2VyIiBhcmUgZXF1YWwuCiMgRmluYWxseSwgZmluZCBvdXQgd2hhdCBoYXBwZW5zIGlmIHlvdSBjb21wYXJlIGxvZ2ljYWxzIHRvIG51bWVyaWNzOiBhcmUgVFJVRSBhbmQgMSBlcXVhbD8KYGBgCgojIyAxLjFhIFVzZXIgSW5wdXQgCgpgYGB7cn0KIyBDb21wYXJpc29uIG9mIGxvZ2ljYWxzClRSVUUgPSBGQUxTRQpUUlVFICE9IEZBTFNFCgojIENvbXBhcmlzb24gb2YgbnVtZXJpY3MKKC02ICogMTQpCigxNyAtIDEwMSkKKC02ICogMTQpICE9ICgxNyAtIDEwMSkKKC02ICogMTQpID0gKDE3IC0gMTAxKQoKIyBDb21wYXJpc29uIG9mIGNoYXJhY3RlciBzdHJpbmdzCiJ1c2VSIiA9ICJ1c2VyIgoKIyAjIENvbnNvbGUgUmVzdWx0cwojID4gIyBDb21wYXJlIGEgbG9naWNhbCB3aXRoIGEgbnVtZXJpYwojID4gVFJVRSA9IDEKIyBFcnJvcjogaW52YWxpZCAoZG9fc2V0KSBsZWZ0LWhhbmQgc2lkZSB0byBhc3NpZ25tZW50CiMgPiAjIENvbXBhcmlzb24gb2YgbG9naWNhbHMKIyA+IFRSVUUgPSBGQUxTRQojIEVycm9yOiBpbnZhbGlkIChkb19zZXQpIGxlZnQtaGFuZCBzaWRlIHRvIGFzc2lnbm1lbnQKIyA+IFRSVUUgIT0gRkFMU0UKIyBbMV0gVFJVRQojID4gCiMgPiAjIENvbXBhcmlzb24gb2YgbnVtZXJpY3MKIyA+ICgtNiAqIDE0KQojIFsxXSAtODQKIyA+ICgxNyAtIDEwMSkKIyBbMV0gLTg0CiMgPiAoLTYgKiAxNCkgIT0gKDE3IC0gMTAxKQojIFsxXSBGQUxTRQojID4gKC02ICogMTQpID0gKDE3IC0gMTAxKQojIEVycm9yOiB0YXJnZXQgb2YgYXNzaWdubWVudCBleHBhbmRzIHRvIG5vbi1sYW5ndWFnZSBvYmplY3QKIyA+IAojID4gIyBDb21wYXJpc29uIG9mIGNoYXJhY3RlciBzdHJpbmdzCiMgPiAidXNlUiIgPSAidXNlciIKIyA+IAojID4gIyBDb21wYXJlIGEgbG9naWNhbCB3aXRoIGEgbnVtZXJpYwojID4gVFJVRSA9IDEKIyBFcnJvcjogaW52YWxpZCAoZG9fc2V0KSBsZWZ0LWhhbmQgc2lkZSB0byBhc3NpZ25tZW50CgpgYGAKCiMjIDEuMWIgRmluYWwgU29sdXRpb24KCmBgYHtyfQojIENvbXBhcmlzb24gb2YgbG9naWNhbHMKVFJVRSA9PSBGQUxTRQoKIyBDb21wYXJpc29uIG9mIG51bWVyaWNzCi02ICogMTQgIT0gMTcgLSAxMDEKCiMgQ29tcGFyaXNvbiBvZiBjaGFyYWN0ZXIgc3RyaW5ncwoidXNlUiIgPT0gInVzZXIiCgojIENvbXBhcmUgYSBsb2dpY2FsIHdpdGggYSBudW1lcmljClRSVUUgPT0gMQpgYGAKCk5vdGUgdGhlIHVzZSBvZiB0aGUgZG91YmxlIGVxdWFsIHNpZ24KClNpbmNlIFRSVUUgY29lcmNlcyB0byAxIHVuZGVyIHRoZSBob29kLCAKVFJVRSA9PSAxIGV2YWx1YXRlcyB0byBUUlVFLiAKTWFrZSBzdXJlIG5vdCB0byBtaXggdXAgPT0gKGNvbXBhcmlzb24pIGFuZCA9IChhc3NpZ25tZW50KSwgPT0gaXMgd2hhdCBuZWVkIHRvIGNoZWNrIHRoZSBlcXVhbGl0eSBvZiBSIG9iamVjdHMuCgoKCiMgMi4gR3JlYXRlciBhbmQgbGVzcyB0aGFuCgoKCgoKCgoKCgoKCgoKIEtlZXAgdGhpcyBpbiBtaW5kIHdoZW4gc29sdmluZyB0aGUgZXhlcmNpc2VzIGluIHRoaXMgY2hhcHRlciEKCgoKCgoKCgoKCgoKCgoKCgoKCgpUaGlzIGlzIGFuIFtSIE1hcmtkb3duXShodHRwOi8vcm1hcmtkb3duLnJzdHVkaW8uY29tKSBOb3RlYm9vay4gV2hlbiB5b3UgZXhlY3V0ZSBjb2RlIHdpdGhpbiB0aGUgbm90ZWJvb2ssIHRoZSByZXN1bHRzIGFwcGVhciBiZW5lYXRoIHRoZSBjb2RlLiAKClRyeSBleGVjdXRpbmcgdGhpcyBjaHVuayBieSBjbGlja2luZyB0aGUgKlJ1biogYnV0dG9uIHdpdGhpbiB0aGUgY2h1bmsgb3IgYnkgcGxhY2luZyB5b3VyIGN1cnNvciBpbnNpZGUgaXQgYW5kIHByZXNzaW5nICpDbWQrU2hpZnQrRW50ZXIqLiAKCgoKQWRkIGEgbmV3IGNodW5rIGJ5IGNsaWNraW5nIHRoZSAqSW5zZXJ0IENodW5rKiBidXR0b24gb24gdGhlIHRvb2xiYXIgb3IgYnkgcHJlc3NpbmcgKkNtZCtPcHRpb24rSSouCgpXaGVuIHlvdSBzYXZlIHRoZSBub3RlYm9vaywgYW4gSFRNTCBmaWxlIGNvbnRhaW5pbmcgdGhlIGNvZGUgYW5kIG91dHB1dCB3aWxsIGJlIHNhdmVkIGFsb25nc2lkZSBpdCAoY2xpY2sgdGhlICpQcmV2aWV3KiBidXR0b24gb3IgcHJlc3MgKkNtZCtTaGlmdCtLKiB0byBwcmV2aWV3IHRoZSBIVE1MIGZpbGUpLiAKClRoZSBwcmV2aWV3IHNob3dzIHlvdSBhIHJlbmRlcmVkIEhUTUwgY29weSBvZiB0aGUgY29udGVudHMgb2YgdGhlIGVkaXRvci4gQ29uc2VxdWVudGx5LCB1bmxpa2UgKktuaXQqLCAqUHJldmlldyogZG9lcyBub3QgcnVuIGFueSBSIGNvZGUgY2h1bmtzLiBJbnN0ZWFkLCB0aGUgb3V0cHV0IG9mIHRoZSBjaHVuayB3aGVuIGl0IHdhcyBsYXN0IHJ1biBpbiB0aGUgZWRpdG9yIGlzIGRpc3BsYXllZC4KCg==</div>
 
 
 
