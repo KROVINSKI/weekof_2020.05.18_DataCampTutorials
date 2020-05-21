@@ -13,8 +13,10 @@ output: html_notebook
 6. Conditional Statements
 7. While Loop
 8. For Loop
-9. placeholder
+9. Functions 
 10. placeholder
+11. placeholder
+12. placeholder
 
 
 # 1. Equality
@@ -469,20 +471,35 @@ for (var1 in seq1) {
 ```
 
 
+# 9. Functions 
+
+
+## 9.1 Understanding functions
 
 
 
+![Black Box- principle](/Users/katherinerovinski/GIT/weekof_2020.05.18_DataCampTutorials/blackboxprinciple_functions.png)
+
+example of the black box when using the standard deviation principle
+
+sd()
+
+
+![Black Box- index set](/Users/katherinerovinski/GIT/weekof_2020.05.18_DataCampTutorials/function_standarddeviation.png)
 
 
 
+![Function - Documentation](/Users/katherinerovinski/GIT/weekof_2020.05.18_DataCampTutorials/function_documentation.png)
 
 
 
+![Function - Argument Matching](/Users/katherinerovinski/GIT/weekof_2020.05.18_DataCampTutorials/function_argumentmatching.png)
 
+![Function - NA values](/Users/katherinerovinski/GIT/weekof_2020.05.18_DataCampTutorials/functions_NAvalues.png)
 
+Rather than use the ? or fn with f1 button you can use the args function to query the syntax of another function
 
-
-
+![Function - fast way to query a function](/Users/katherinerovinski/GIT/weekof_2020.05.18_DataCampTutorials/function_args.png)
 
 
 
