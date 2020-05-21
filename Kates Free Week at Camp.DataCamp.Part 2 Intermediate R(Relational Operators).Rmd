@@ -20,7 +20,7 @@ output: html_notebook
 13. sapply
 14. vapply
 15. Useful Functions
-
+16. Regular Expressions 
 
 
 # 1. Equality
@@ -627,7 +627,7 @@ vapply is similar to sapply, but has a pre-specified type of return value, so it
 
 # 15. Useful Functions
 
-Mathematical utilities
+## 15.1 Mathematical utilities
 Have another look at some useful math functions that R features:
 
 abs(): Calculate the absolute value.
@@ -635,11 +635,63 @@ sum(): Calculate the sum of all the values in a data structure.
 mean(): Calculate the arithmetic mean.
 round(): Round the values to 0 decimal places by default. Try out ?round in the console for variations of round() and ways to change the number of digits to round to.
 
+## 15.2 Find the Error
+In times of despair, help with functions such as sum() and rev() are a single command away; simply use ?sum and ?rev in the console.
+
+Example:
+```{r}
+# > # Don't edit these two lines
+vec1 <- c(1.5, 2.5, 8.4, 3.7, 6.3)
+ vec2 <- rev(vec1)
+# > 
+# > # Fix the error
+# > mean(abs(vec1), abs(vec2))
+# Error: 'trim' must be numeric of length one
+
+## Console Result/Solution
+# # Don't edit these two lines
+# vec1 <- c(1.5, 2.5, 8.4, 3.7, 6.3)
+# vec2 <- rev(vec1)
+# 
+# # Fix the error
+# mean(c(abs(vec1), abs(vec2)))
+
+```
+
+
+## 15.3 Data Utilities
+
+R features a bunch of functions to juggle around with data structures::
+
+seq(): Generate sequences, by specifying the from, to, and by arguments.
+rep(): Replicate elements of vectors and lists.
+sort(): Sort a vector in ascending order. Works on numerics, but also on character strings and logicals.
+rev(): Reverse the elements in a data structures for which reversal is defined.
+str(): Display the structure of any R object.
+append(): Merge vectors or lists.
+is.*(): Check for the class of an R object.
+as.*(): Convert an R object from one class to another.
+unlist(): Flatten (possibly embedded) lists to produce a vector.
+
+
+# 16. Regular Expressions 
 
 
 
 
+![Fun List of Regular Expressions](/Users/katherinerovinski/GIT/weekof_2020.05.18_DataCampTutorials/regularexpressions1.png)
 
+
+grepl & grep
+In their most basic form, regular expressions can be used to see whether a pattern exists inside a character string or a vector of character strings. For this purpose, you can use:
+
+grepl(), which returns TRUE when a pattern is found in the corresponding character string.
+grep(), which returns a vector of indices of the character strings that contains the pattern.
+
+
+Both functions need a pattern and an x argument, where pattern is the regular expression you want to match for, and the x argument is the character vector from which matches should be sought.
+
+![Regular Expressions con't](/Users/katherinerovinski/GIT/weekof_2020.05.18_DataCampTutorials/regularexpressions2.png) 
 
 
 
