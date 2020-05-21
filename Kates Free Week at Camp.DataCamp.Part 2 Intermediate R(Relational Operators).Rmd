@@ -14,7 +14,7 @@ output: html_notebook
 7. While Loop
 8. For Loop
 9. Functions 
-10. placeholder
+10. Writing Your own  Function
 11. placeholder
 12. placeholder
 
@@ -502,8 +502,61 @@ Rather than use the ? or fn with f1 button you can use the args function to quer
 ![Function - fast way to query a function](/Users/katherinerovinski/GIT/weekof_2020.05.18_DataCampTutorials/function_args.png)
 
 
+# 10. Writing Your own  Function
 
 
+function template:
+
+```{r}
+my_fun <- function(arg1, arg2) {
+  body
+}
+```
+
+
+Example of random results (throwing dice)
+
+```{r}
+throw_die <- function() {
+  number <- sample(1:6, size = 1)
+  number
+}
+
+throw_die()
+```
+
+Example of creating a greeting function, saying hello 
+
+```{r}
+# Define the function hello()
+hello <- function() {
+  print("Hi there!")
+  TRUE
+}
+
+# Call the function hello()
+hello()
+```
+
+
+You can define default argument values in your own R functions
+
+```{r}
+my_fun <- function(arg1, arg2 = val2) {
+  body
+}
+```
+
+
+# 11. R Packages 
+
+Load an R Package
+There are basically two extremely important functions when it comes down to R packages:
+
+install.packages(), which as you can expect, installs a given package.
+library() which loads packages, i.e. attaches them to the search list on your R workspace.
+
+To install packages, you need administrator privileges. This means that install.packages() will thus not work in the DataCamp interface. However, almost all CRAN packages are installed on our servers. You can load them with library().
 
 
 
