@@ -21,6 +21,7 @@ output: html_notebook
 14. vapply
 15. Useful Functions
 16. Regular Expressions 
+17. Date Time Objects
 
 
 # 1. Equality
@@ -694,23 +695,150 @@ Both functions need a pattern and an x argument, where pattern is the regular ex
 ![Regular Expressions con't](/Users/katherinerovinski/GIT/weekof_2020.05.18_DataCampTutorials/regularexpressions2.png) 
 
 
+Example:
+
+```{r}
+# The emails vector has already been defined for you
+emails <- c("john.doe@ivyleague.edu", "education@world.gov", "dalai.lama@peace.org",
+            "invalid.edu", "quant@bigdatacollege.edu", "cookie.monster@sesame.tv")
+
+# Use grepl() to match for "edu"
+grepl("edu", emails)
+
+# Use grep() to match for "edu", save result to hits
+hits <- grep("edu", emails)
+
+# Subset emails using hits
+emails[hits]
+```
+
+Console Results
+
+```{r}
+# > # The emails vector has already been defined for you
+# > emails <- c("john.doe@ivyleague.edu", "education@world.gov", "dalai.lama@peace.org",
+#               "invalid.edu", "quant@bigdatacollege.edu", "cookie.monster@sesame.tv")
+# > 
+# > # Use grepl() to match for "edu"
+# > grepl("edu", emails)
+# [1]  TRUE  TRUE FALSE  TRUE  TRUE FALSE
+# > 
+# > # Use grep() to match for "edu", save result to hits
+# > hits <- grep("edu", emails)
+# > 
+# > # Subset emails using hits
+# > emails[hits]
+# [1] "john.doe@ivyleague.edu"   "education@world.gov"     
+# [3] "invalid.edu"              "quant@bigdatacollege.edu"
+# > 
+```
+
+
+![Regular Expressions con't](/Users/katherinerovinski/GIT/weekof_2020.05.18_DataCampTutorials/regularexpressions3.png) 
+
+sub & gsub
+While grep() and grepl() were used to simply check whether a regular expression could be matched with a character vector, sub() and gsub() take it one step further: you can specify a replacement argument. If inside the character vector x, the regular expression pattern is found, the matching element(s) will be replaced with replacement.sub() only replaces the first match, whereas gsub() replaces all matches.
+
+example: 
+
+```{r}
+# The emails vector has already been defined for you
+emails <- c("john.doe@ivyleague.edu", "education@world.gov", "global@peace.org",
+            "invalid.edu", "quant@bigdatacollege.edu", "cookie.monster@sesame.tv")
+
+# Use sub() to convert the email domains to datacamp.edu
+sub("@.*\\.edu$", "@datacamp.edu", emails)
+```
+
+solution from the console: 
+
+```{r}
+# > # The emails vector has already been defined for you
+# > emails <- c("john.doe@ivyleague.edu", "education@world.gov", "global@peace.org",
+#               "invalid.edu", "quant@bigdatacollege.edu", "cookie.monster@sesame.tv")
+# > 
+# > # Use sub() to convert the email domains to datacamp.edu
+# > sub("@.*\\.edu$", "@datacamp.edu", emails)
+# [1] "john.doe@datacamp.edu"    "education@world.gov"     
+# [3] "global@peace.org"         "invalid.edu"             
+# [5] "quant@datacamp.edu"       "cookie.monster@sesame.tv"
+```
+
+
+![Regular Expressions con't](/Users/katherinerovinski/GIT/weekof_2020.05.18_DataCampTutorials/regularexpressions4.png) 
+
+![Regular Expressions con't](/Users/katherinerovinski/GIT/weekof_2020.05.18_DataCampTutorials/regularexpressions5.png) 
+
+
+# 17. Date Time Objects
+
+
+![Date Time Objects images](/Users/katherinerovinski/GIT/weekof_2020.05.18_DataCampTutorials/dateTimeobjects1.png) 
+
+![Date Time Objects images](/Users/katherinerovinski/GIT/weekof_2020.05.18_DataCampTutorials/dateTimeobject2.png) 
+
+![Date Time Objects images](/Users/katherinerovinski/GIT/weekof_2020.05.18_DataCampTutorials/dateTimeobject3.png) 
+
+
+![Date Time Objects images](/Users/katherinerovinski/GIT/weekof_2020.05.18_DataCampTutorials/dateTimeobjects4.png) 
+
+ example: 
+ 
+```{r}
+# Get the current date: today
+today <- Sys.Date()
+
+# See what today looks like under the hood
+unclass(today)
+
+# Get the current time: now
+now <- Sys.time()
+
+# See what now looks like under the hood
+unclass(now)
+```
+ 
+
+Solution from the console view
+
+```{r}
+# > # Get the current date: today
+# > today <- Sys.Date()
+# > 
+# > # See what today looks like under the hood
+# > unclass(today)
+# [1] 18403
+# > 
+# > # Get the current time: now
+# > now <- Sys.time()
+# > 
+# > # See what now looks like under the hood
+# > unclass(now)
+# [1] 1590084898
+```
+
+
+## 17.1 Create and format dates
+
+To create a Date object from a simple character string in R, you can use the as.Date() function. The character string has to obey a format that can be defined using a set of symbols (the examples correspond to 13 January, 1982):
+
+%Y: 4-digit year (1982)
+%y: 2-digit year (82)
+%m: 2-digit month (01)
+%d: 2-digit day of the month (13)
+%A: weekday (Wednesday)
+%a: abbreviated weekday (Wed)
+%B: month (January)
+%b: abbreviated month (Jan)
+The following R commands will all create the same Date object for the 13th day in January of 1982:
+
+as.Date("1982-01-13")
+as.Date("Jan-13-82", format = "%b-%d-%y")
+as.Date("13 January, 1982", format = "%d %B, %Y")
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Again,as.POSIXct() uses a default format to match character strings. In this case, it's %Y-%m-%d %H:%M:%S. In this exercise, abstraction is made of different time zones.
 
 
 
