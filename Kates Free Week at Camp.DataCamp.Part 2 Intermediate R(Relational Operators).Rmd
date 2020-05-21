@@ -15,8 +15,12 @@ output: html_notebook
 8. For Loop
 9. Functions 
 10. Writing Your own  Function
-11. placeholder
-12. placeholder
+11. R packages
+12. List Apply lapply
+13. sapply
+14. vapply
+15. Useful Functions
+
 
 
 # 1. Equality
@@ -557,6 +561,102 @@ install.packages(), which as you can expect, installs a given package.
 library() which loads packages, i.e. attaches them to the search list on your R workspace.
 
 To install packages, you need administrator privileges. This means that install.packages() will thus not work in the DataCamp interface. However, almost all CRAN packages are installed on our servers. You can load them with library().
+
+
+# 12. Lapply
+
+
+The Usage section shows the following expression:
+
+```{r}
+lapply(X, FUN, ...)
+```
+
+
+
+The triple() function was transformed to the multiply() function to allow for a more generic approach. lapply() provides a way to handle functions that require more than one argument, such as the multiply() function:
+
+```{r}
+multiply <- function(x, factor) {
+  x * factor
+}
+lapply(list(1,2,3), multiply, factor = 3)
+```
+
+
+Apply functions that return NULL
+
+the tolower() function simply returns the strings with the characters in lowercase. This won't always be the case. Suppose you want to display the structure of every element of a list. You could use the str() function for this, which returns NULL:
+
+```{r}
+lapply(list(1, "a", TRUE), str)
+```
+
+This call actually returns a list, the same size as the input list, containing all NULL values. On the other hand calling
+
+```{r}
+str(TRUE)
+```
+
+
+on its own prints only the structure of the logical to the console, not NULL. That's because str() uses invisible() behind the scenes, which returns an invisible copy of the return value, NULL in this case. This prevents it from being printed when the result of str() is not assigned.
+
+# 13. sapply
+
+You can use sapply() similar to how you used lapply(). The first argument of sapply() is the list or vector X over which you want to apply a function, FUN. Potential additional arguments to this function are specified afterwards (...):
+
+```{r}
+sapply(X, FUN, ...)
+```
+
+
+Apply a Function over a List or Vector
+Description
+lapply returns a list of the same length as X, each element of which is the result of applying FUN to the corresponding element of X.
+
+sapply is a user-friendly version and wrapper of lapply by default returning a vector, matrix or, if simplify = "array", an array if appropriate, by applying simplify2array(). sapply(x, f, simplify = FALSE, USE.NAMES = FALSE) is the same as lapply(x, f).
+
+# 14. vapply
+
+The function is called vapply(), and it has the following syntax:
+
+vapply(X, FUN, FUN.VALUE, ..., USE.NAMES = TRUE)
+
+vapply is similar to sapply, but has a pre-specified type of return value, so it can be safer (and sometimes faster) to use.
+
+
+# 15. Useful Functions
+
+Mathematical utilities
+Have another look at some useful math functions that R features:
+
+abs(): Calculate the absolute value.
+sum(): Calculate the sum of all the values in a data structure.
+mean(): Calculate the arithmetic mean.
+round(): Round the values to 0 decimal places by default. Try out ?round in the console for variations of round() and ways to change the number of digits to round to.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
