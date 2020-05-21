@@ -5,8 +5,8 @@ output: html_notebook
 
 
 # Table of Contents
-1. placeholder
-2. placeholder and less than
+1. Introduction
+2. Filter Verb
 3. placeholder vectors & matrices
 4. placeholder Operators
 5. placeholder the result: !
@@ -22,5 +22,99 @@ output: html_notebook
 15. placeholder Functions
 16. placeholder Expressions 
 17. placeholder Time Objects
+
+
+# 1. Introduction to the Tidyverse
+
+![tidyverse figure1](/Users/katherinerovinski/GIT/weekof_2020.05.18_DataCampTutorials/tidyverse1.png)
+
+# 2. Filter Verb
+
+atomic step you use to filter data
+
+you will always accompany it with a pipe
+
+
+![tidyverse figure2](/Users/katherinerovinski/GIT/weekof_2020.05.18_DataCampTutorials/tidyverse2.png)
+
+
+![tidyverse figure3](/Users/katherinerovinski/GIT/weekof_2020.05.18_DataCampTutorials/tidyverse3.png)
+
+
+Example: 
+```{r}
+library(gapminder)
+library(dplyr)
+
+# Filter for China in 2002
+gapminder %>%
+  filter(country == "China", year == 2002)
+```
+
+Solution 
+
+```{r}
+# > library(gapminder)
+# > library(dplyr)
+# > 
+# > # Filter for China in 2002
+# > gapminder %>%
+#     filter(country == "China", year == 2002)
+# # A tibble: 1 x 6
+#   country continent  year lifeExp        pop gdpPercap
+#   <fct>   <fct>     <int>   <dbl>      <int>     <dbl>
+# 1 China   Asia       2002    72.0 1280400000     3119.
+```
+
+
+
+
+![tidyverse figure4](/Users/katherinerovinski/GIT/weekof_2020.05.18_DataCampTutorials/tidyverse4.png)
+
+
+![tidyverse figure5](/Users/katherinerovinski/GIT/weekof_2020.05.18_DataCampTutorials/tidyverse5.png)
+
+
+![tidyverse figure3](/Users/katherinerovinski/GIT/weekof_2020.05.18_DataCampTutorials/tidyverse6.png)
+
+
+the arrange function defaults to accending order
+
+
+```{r}
+library(gapminder)
+library(dplyr)
+
+# Sort in ascending order of lifeExp
+gapminder %>%
+  arrange(lifeExp)
+  
+# Sort in descending order of lifeExp
+gapminder %>%
+  arrange(desc(lifeExp))
+```
+
+
+
+
+# 2. Mutate Function
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
