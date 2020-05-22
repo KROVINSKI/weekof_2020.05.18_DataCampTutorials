@@ -99,11 +99,106 @@ gapminder %>%
 
 # 2. Mutate Function
 
+you create a new variable based on certain conditions in existing variables
 
 
+Example
+```{r}
+library(gapminder)
+library(dplyr)
+
+# Use mutate to change lifeExp to be in months
+gapminder %>%
+  mutate(lifeExp = lifeExp * 12)
+
+# Use mutate to create a new column called lifeExpMonths
+gapminder %>%
+  mutate(lifeExpMonths = lifeExp * 12)
+```
 
 
+Solution
 
+```{r}
+# > library(gapminder)
+# > library(dplyr)
+# > 
+#> # Use mutate to change lifeExp to be in months
+# > gapminder %>%
+#     mutate(lifeExp = lifeExp * 12)
+# # A tibble: 1,704 x 6
+#    country     continent  year lifeExp      pop gdpPercap
+#    <fct>       <fct>     <int>   <dbl>    <int>     <dbl>
+#  1 Afghanistan Asia       1952    346.  8425333      779.
+#  2 Afghanistan Asia       1957    364.  9240934      821.
+#  3 Afghanistan Asia       1962    384. 10267083      853.
+#  4 Afghanistan Asia       1967    408. 11537966      836.
+#  5 Afghanistan Asia       1972    433. 13079460      740.
+#  6 Afghanistan Asia       1977    461. 14880372      786.
+#  7 Afghanistan Asia       1982    478. 12881816      978.
+#  8 Afghanistan Asia       1987    490. 13867957      852.
+#  9 Afghanistan Asia       1992    500. 16317921      649.
+# 10 Afghanistan Asia       1997    501. 22227415      635.
+# # ... with 1,694 more rows
+# > 
+# > # Use mutate to create a new column called lifeExpMonths
+# > gapminder %>%
+#     mutate(lifeExpMonths = lifeExp * 12)
+# # A tibble: 1,704 x 7
+#    country     continent  year lifeExp      pop gdpPercap lifeExpMonths
+#    <fct>       <fct>     <int>   <dbl>    <int>     <dbl>         <dbl>
+#  1 Afghanistan Asia       1952    28.8  8425333      779.          346.
+#  2 Afghanistan Asia       1957    30.3  9240934      821.          364.
+#  3 Afghanistan Asia       1962    32.0 10267083      853.          384.
+#  4 Afghanistan Asia       1967    34.0 11537966      836.          408.
+#  5 Afghanistan Asia       1972    36.1 13079460      740.          433.
+#  6 Afghanistan Asia       1977    38.4 14880372      786.          461.
+#  7 Afghanistan Asia       1982    39.9 12881816      978.          478.
+#  8 Afghanistan Asia       1987    40.8 13867957      852.          490.
+#  9 Afghanistan Asia       1992    41.7 16317921      649.          500.
+# 10 Afghanistan Asia       1997    41.8 22227415      635.          501.
+# # ... with 1,694 more rows
+```
+
+
+# 3. ggplot2
+
+There are three parts to a ggplot graph
+
+geom referes to a type of geometric object
+
+Example
+```{r}
+library(gapminder)
+library(dplyr)
+library(ggplot2)
+
+gapminder_1952 <- gapminder %>%
+  filter(year == 1952)
+
+# Create a scatter plot with pop on the x-axis and lifeExp on the y-axis
+ggplot(gapminder_1952, aes(x = pop, y = lifeExp)) +
+  geom_point()
+```
+
+Solution
+
+```{r}
+# > library(gapminder)
+# > library(dplyr)
+# > library(ggplot2)
+# > 
+# > gapminder_1952 <- gapminder %>%
+#     filter(year == 1952)
+# > 
+# > # Create a scatter plot with pop on the x-axis and lifeExp on the y-axis
+# > ggplot(gapminder_1952, aes(x = pop, y = lifeExp)) +
+#     geom_point()
+```
+
+3.1 logs and ggplot2
+
+3.2 additional aesthics 
 
 
 

@@ -1,0 +1,79 @@
+---
+title: "Kate's Free Week at Camp: DataCamp, Introduction to Mapping"
+output: html_notebook
+---
+
+
+# Table of Contents
+1. Introduction
+2. Filter Verb
+3. placeholder vectors & matrices
+4. placeholder Operators
+5. placeholder the result: !
+6. placeholder Statements
+7. placeholder Loop
+8. placeholder Loop
+9. placeholder 
+10. placeholder Your own  Function
+11. R placeholder
+12. placeholder Apply lapply
+13. placeholder
+14. placeholder
+15. placeholder Functions
+16. placeholder Expressions 
+17. placeholder Time Objects
+
+
+
+# 1. Grabbing a background map
+There are two steps to adding a map to a ggplot2 plot with ggmap:
+
+Download a map using get_map()
+Display the map using ggmap()
+As an example, let's grab a map for New York City:
+
+```{r}
+library(ggmap)
+
+nyc <- c(lon = -74.0059, lat = 40.7128)
+nyc_map <- get_map(location = nyc, zoom = 10)
+```
+
+example: 
+```{r}
+library(ggmap)
+corvallis <- c(lon = -123.2620, lat = 44.5646)
+
+# Get map at zoom level 5: map_5
+map_5 <- get_map(corvallis, zoom = 5, scale = 1)
+
+# Plot map at zoom level 5
+ggmap(map_5)
+
+# Get map at zoom level 13: corvallis_map
+corvallis_map <- get_map(corvallis, zoom = 13, scale = 1)
+
+# Plot map at zoom level 13
+ggmap(corvallis_map)
+```
+
+solution/ console:
+```{r}
+# > library(ggmap)
+# > corvallis <- c(lon = -123.2620, lat = 44.5646)
+# > 
+# > # Get map at zoom level 5: map_5
+# > map_5 <- get_map(corvallis, zoom = 5, scale = 1)
+# > 
+# > # Plot map at zoom level 5
+# > ggmap(map_5)
+# > 
+# > # Get map at zoom level 13: corvallis_map
+# > corvallis_map <- get_map(corvallis, zoom = 13, scale = 1)
+# > 
+# > # Plot map at zoom level 13
+# > ggmap(corvallis_map)
+> 
+```
+
+
