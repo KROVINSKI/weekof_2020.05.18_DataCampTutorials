@@ -1852,10 +1852,114 @@ gapminder %&gt;%
 </div>
 <div id="mutate-function" class="section level1">
 <h1>2. Mutate Function</h1>
+<p>you create a new variable based on certain conditions in existing variables</p>
+<p>Example</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShnYXBtaW5kZXIpXG5saWJyYXJ5KGRwbHlyKVxuXG4jIFVzZSBtdXRhdGUgdG8gY2hhbmdlIGxpZmVFeHAgdG8gYmUgaW4gbW9udGhzXG5nYXBtaW5kZXIgJT4lXG4gIG11dGF0ZShsaWZlRXhwID0gbGlmZUV4cCAqIDEyKVxuXG4jIFVzZSBtdXRhdGUgdG8gY3JlYXRlIGEgbmV3IGNvbHVtbiBjYWxsZWQgbGlmZUV4cE1vbnRoc1xuZ2FwbWluZGVyICU+JVxuICBtdXRhdGUobGlmZUV4cE1vbnRocyA9IGxpZmVFeHAgKiAxMilcbmBgYCJ9 -->
+<pre class="r"><code>library(gapminder)
+library(dplyr)
+
+# Use mutate to change lifeExp to be in months
+gapminder %&gt;%
+  mutate(lifeExp = lifeExp * 12)
+
+# Use mutate to create a new column called lifeExpMonths
+gapminder %&gt;%
+  mutate(lifeExpMonths = lifeExp * 12)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Solution</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyA+IGxpYnJhcnkoZ2FwbWluZGVyKVxuIyA+IGxpYnJhcnkoZHBseXIpXG4jID4gXG4jPiAjIFVzZSBtdXRhdGUgdG8gY2hhbmdlIGxpZmVFeHAgdG8gYmUgaW4gbW9udGhzXG4jID4gZ2FwbWluZGVyICU+JVxuIyAgICAgbXV0YXRlKGxpZmVFeHAgPSBsaWZlRXhwICogMTIpXG4jICMgQSB0aWJibGU6IDEsNzA0IHggNlxuIyAgICBjb3VudHJ5ICAgICBjb250aW5lbnQgIHllYXIgbGlmZUV4cCAgICAgIHBvcCBnZHBQZXJjYXBcbiMgICAgPGZjdD4gICAgICAgPGZjdD4gICAgIDxpbnQ+ICAgPGRibD4gICAgPGludD4gICAgIDxkYmw+XG4jICAxIEFmZ2hhbmlzdGFuIEFzaWEgICAgICAgMTk1MiAgICAzNDYuICA4NDI1MzMzICAgICAgNzc5LlxuIyAgMiBBZmdoYW5pc3RhbiBBc2lhICAgICAgIDE5NTcgICAgMzY0LiAgOTI0MDkzNCAgICAgIDgyMS5cbiMgIDMgQWZnaGFuaXN0YW4gQXNpYSAgICAgICAxOTYyICAgIDM4NC4gMTAyNjcwODMgICAgICA4NTMuXG4jICA0IEFmZ2hhbmlzdGFuIEFzaWEgICAgICAgMTk2NyAgICA0MDguIDExNTM3OTY2ICAgICAgODM2LlxuIyAgNSBBZmdoYW5pc3RhbiBBc2lhICAgICAgIDE5NzIgICAgNDMzLiAxMzA3OTQ2MCAgICAgIDc0MC5cbiMgIDYgQWZnaGFuaXN0YW4gQXNpYSAgICAgICAxOTc3ICAgIDQ2MS4gMTQ4ODAzNzIgICAgICA3ODYuXG4jICA3IEFmZ2hhbmlzdGFuIEFzaWEgICAgICAgMTk4MiAgICA0NzguIDEyODgxODE2ICAgICAgOTc4LlxuIyAgOCBBZmdoYW5pc3RhbiBBc2lhICAgICAgIDE5ODcgICAgNDkwLiAxMzg2Nzk1NyAgICAgIDg1Mi5cbiMgIDkgQWZnaGFuaXN0YW4gQXNpYSAgICAgICAxOTkyICAgIDUwMC4gMTYzMTc5MjEgICAgICA2NDkuXG4jIDEwIEFmZ2hhbmlzdGFuIEFzaWEgICAgICAgMTk5NyAgICA1MDEuIDIyMjI3NDE1ICAgICAgNjM1LlxuIyAjIC4uLiB3aXRoIDEsNjk0IG1vcmUgcm93c1xuIyA+IFxuIyA+ICMgVXNlIG11dGF0ZSB0byBjcmVhdGUgYSBuZXcgY29sdW1uIGNhbGxlZCBsaWZlRXhwTW9udGhzXG4jID4gZ2FwbWluZGVyICU+JVxuIyAgICAgbXV0YXRlKGxpZmVFeHBNb250aHMgPSBsaWZlRXhwICogMTIpXG4jICMgQSB0aWJibGU6IDEsNzA0IHggN1xuIyAgICBjb3VudHJ5ICAgICBjb250aW5lbnQgIHllYXIgbGlmZUV4cCAgICAgIHBvcCBnZHBQZXJjYXAgbGlmZUV4cE1vbnRoc1xuIyAgICA8ZmN0PiAgICAgICA8ZmN0PiAgICAgPGludD4gICA8ZGJsPiAgICA8aW50PiAgICAgPGRibD4gICAgICAgICA8ZGJsPlxuIyAgMSBBZmdoYW5pc3RhbiBBc2lhICAgICAgIDE5NTIgICAgMjguOCAgODQyNTMzMyAgICAgIDc3OS4gICAgICAgICAgMzQ2LlxuIyAgMiBBZmdoYW5pc3RhbiBBc2lhICAgICAgIDE5NTcgICAgMzAuMyAgOTI0MDkzNCAgICAgIDgyMS4gICAgICAgICAgMzY0LlxuIyAgMyBBZmdoYW5pc3RhbiBBc2lhICAgICAgIDE5NjIgICAgMzIuMCAxMDI2NzA4MyAgICAgIDg1My4gICAgICAgICAgMzg0LlxuIyAgNCBBZmdoYW5pc3RhbiBBc2lhICAgICAgIDE5NjcgICAgMzQuMCAxMTUzNzk2NiAgICAgIDgzNi4gICAgICAgICAgNDA4LlxuIyAgNSBBZmdoYW5pc3RhbiBBc2lhICAgICAgIDE5NzIgICAgMzYuMSAxMzA3OTQ2MCAgICAgIDc0MC4gICAgICAgICAgNDMzLlxuIyAgNiBBZmdoYW5pc3RhbiBBc2lhICAgICAgIDE5NzcgICAgMzguNCAxNDg4MDM3MiAgICAgIDc4Ni4gICAgICAgICAgNDYxLlxuIyAgNyBBZmdoYW5pc3RhbiBBc2lhICAgICAgIDE5ODIgICAgMzkuOSAxMjg4MTgxNiAgICAgIDk3OC4gICAgICAgICAgNDc4LlxuIyAgOCBBZmdoYW5pc3RhbiBBc2lhICAgICAgIDE5ODcgICAgNDAuOCAxMzg2Nzk1NyAgICAgIDg1Mi4gICAgICAgICAgNDkwLlxuIyAgOSBBZmdoYW5pc3RhbiBBc2lhICAgICAgIDE5OTIgICAgNDEuNyAxNjMxNzkyMSAgICAgIDY0OS4gICAgICAgICAgNTAwLlxuIyAxMCBBZmdoYW5pc3RhbiBBc2lhICAgICAgIDE5OTcgICAgNDEuOCAyMjIyNzQxNSAgICAgIDYzNS4gICAgICAgICAgNTAxLlxuIyAjIC4uLiB3aXRoIDEsNjk0IG1vcmUgcm93c1xuYGBgIn0= -->
+<pre class="r"><code># &gt; library(gapminder)
+# &gt; library(dplyr)
+# &gt; 
+#&gt; # Use mutate to change lifeExp to be in months
+# &gt; gapminder %&gt;%
+#     mutate(lifeExp = lifeExp * 12)
+# # A tibble: 1,704 x 6
+#    country     continent  year lifeExp      pop gdpPercap
+#    &lt;fct&gt;       &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;    &lt;int&gt;     &lt;dbl&gt;
+#  1 Afghanistan Asia       1952    346.  8425333      779.
+#  2 Afghanistan Asia       1957    364.  9240934      821.
+#  3 Afghanistan Asia       1962    384. 10267083      853.
+#  4 Afghanistan Asia       1967    408. 11537966      836.
+#  5 Afghanistan Asia       1972    433. 13079460      740.
+#  6 Afghanistan Asia       1977    461. 14880372      786.
+#  7 Afghanistan Asia       1982    478. 12881816      978.
+#  8 Afghanistan Asia       1987    490. 13867957      852.
+#  9 Afghanistan Asia       1992    500. 16317921      649.
+# 10 Afghanistan Asia       1997    501. 22227415      635.
+# # ... with 1,694 more rows
+# &gt; 
+# &gt; # Use mutate to create a new column called lifeExpMonths
+# &gt; gapminder %&gt;%
+#     mutate(lifeExpMonths = lifeExp * 12)
+# # A tibble: 1,704 x 7
+#    country     continent  year lifeExp      pop gdpPercap lifeExpMonths
+#    &lt;fct&gt;       &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;    &lt;int&gt;     &lt;dbl&gt;         &lt;dbl&gt;
+#  1 Afghanistan Asia       1952    28.8  8425333      779.          346.
+#  2 Afghanistan Asia       1957    30.3  9240934      821.          364.
+#  3 Afghanistan Asia       1962    32.0 10267083      853.          384.
+#  4 Afghanistan Asia       1967    34.0 11537966      836.          408.
+#  5 Afghanistan Asia       1972    36.1 13079460      740.          433.
+#  6 Afghanistan Asia       1977    38.4 14880372      786.          461.
+#  7 Afghanistan Asia       1982    39.9 12881816      978.          478.
+#  8 Afghanistan Asia       1987    40.8 13867957      852.          490.
+#  9 Afghanistan Asia       1992    41.7 16317921      649.          500.
+# 10 Afghanistan Asia       1997    41.8 22227415      635.          501.
+# # ... with 1,694 more rows</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="ggplot2" class="section level1">
+<h1>3. ggplot2</h1>
+<p>There are three parts to a ggplot graph</p>
+<p>geom referes to a type of geometric object</p>
+<p>Example</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShnYXBtaW5kZXIpXG5saWJyYXJ5KGRwbHlyKVxubGlicmFyeShnZ3Bsb3QyKVxuXG5nYXBtaW5kZXJfMTk1MiA8LSBnYXBtaW5kZXIgJT4lXG4gIGZpbHRlcih5ZWFyID09IDE5NTIpXG5cbiMgQ3JlYXRlIGEgc2NhdHRlciBwbG90IHdpdGggcG9wIG9uIHRoZSB4LWF4aXMgYW5kIGxpZmVFeHAgb24gdGhlIHktYXhpc1xuZ2dwbG90KGdhcG1pbmRlcl8xOTUyLCBhZXMoeCA9IHBvcCwgeSA9IGxpZmVFeHApKSArXG4gIGdlb21fcG9pbnQoKVxuYGBgIn0= -->
+<pre class="r"><code>library(gapminder)
+library(dplyr)
+library(ggplot2)
+
+gapminder_1952 &lt;- gapminder %&gt;%
+  filter(year == 1952)
+
+# Create a scatter plot with pop on the x-axis and lifeExp on the y-axis
+ggplot(gapminder_1952, aes(x = pop, y = lifeExp)) +
+  geom_point()</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Solution</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyA+IGxpYnJhcnkoZ2FwbWluZGVyKVxuIyA+IGxpYnJhcnkoZHBseXIpXG4jID4gbGlicmFyeShnZ3Bsb3QyKVxuIyA+IFxuIyA+IGdhcG1pbmRlcl8xOTUyIDwtIGdhcG1pbmRlciAlPiVcbiMgICAgIGZpbHRlcih5ZWFyID09IDE5NTIpXG4jID4gXG4jID4gIyBDcmVhdGUgYSBzY2F0dGVyIHBsb3Qgd2l0aCBwb3Agb24gdGhlIHgtYXhpcyBhbmQgbGlmZUV4cCBvbiB0aGUgeS1heGlzXG4jID4gZ2dwbG90KGdhcG1pbmRlcl8xOTUyLCBhZXMoeCA9IHBvcCwgeSA9IGxpZmVFeHApKSArXG4jICAgICBnZW9tX3BvaW50KClcbmBgYCJ9 -->
+<pre class="r"><code># &gt; library(gapminder)
+# &gt; library(dplyr)
+# &gt; library(ggplot2)
+# &gt; 
+# &gt; gapminder_1952 &lt;- gapminder %&gt;%
+#     filter(year == 1952)
+# &gt; 
+# &gt; # Create a scatter plot with pop on the x-axis and lifeExp on the y-axis
+# &gt; ggplot(gapminder_1952, aes(x = pop, y = lifeExp)) +
+#     geom_point()</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>3.1 logs and ggplot2</p>
+<p>3.2 additional aesthics</p>
 <!-- rnb-text-end -->
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiS2F0ZSdzIEZyZWUgV2VlayBhdCBDYW1wOiBEYXRhQ2FtcCwgSW50cm9kdWN0aW9uIHRvIHRoZSBUaWR5dmVyc2UiCm91dHB1dDogaHRtbF9ub3RlYm9vawotLS0KCgojIFRhYmxlIG9mIENvbnRlbnRzCjEuIEludHJvZHVjdGlvbgoyLiBGaWx0ZXIgVmVyYgozLiBwbGFjZWhvbGRlciB2ZWN0b3JzICYgbWF0cmljZXMKNC4gcGxhY2Vob2xkZXIgT3BlcmF0b3JzCjUuIHBsYWNlaG9sZGVyIHRoZSByZXN1bHQ6ICEKNi4gcGxhY2Vob2xkZXIgU3RhdGVtZW50cwo3LiBwbGFjZWhvbGRlciBMb29wCjguIHBsYWNlaG9sZGVyIExvb3AKOS4gcGxhY2Vob2xkZXIgCjEwLiBwbGFjZWhvbGRlciBZb3VyIG93biAgRnVuY3Rpb24KMTEuIFIgcGxhY2Vob2xkZXIKMTIuIHBsYWNlaG9sZGVyIEFwcGx5IGxhcHBseQoxMy4gcGxhY2Vob2xkZXIKMTQuIHBsYWNlaG9sZGVyCjE1LiBwbGFjZWhvbGRlciBGdW5jdGlvbnMKMTYuIHBsYWNlaG9sZGVyIEV4cHJlc3Npb25zIAoxNy4gcGxhY2Vob2xkZXIgVGltZSBPYmplY3RzCgoKIyAxLiBJbnRyb2R1Y3Rpb24gdG8gdGhlIFRpZHl2ZXJzZQoKIVt0aWR5dmVyc2UgZmlndXJlMV0oL1VzZXJzL2thdGhlcmluZXJvdmluc2tpL0dJVC93ZWVrb2ZfMjAyMC4wNS4xOF9EYXRhQ2FtcFR1dG9yaWFscy90aWR5dmVyc2UxLnBuZykKCiMgMi4gRmlsdGVyIFZlcmIKCmF0b21pYyBzdGVwIHlvdSB1c2UgdG8gZmlsdGVyIGRhdGEKCnlvdSB3aWxsIGFsd2F5cyBhY2NvbXBhbnkgaXQgd2l0aCBhIHBpcGUKCgohW3RpZHl2ZXJzZSBmaWd1cmUyXSgvVXNlcnMva2F0aGVyaW5lcm92aW5za2kvR0lUL3dlZWtvZl8yMDIwLjA1LjE4X0RhdGFDYW1wVHV0b3JpYWxzL3RpZHl2ZXJzZTIucG5nKQoKCiFbdGlkeXZlcnNlIGZpZ3VyZTNdKC9Vc2Vycy9rYXRoZXJpbmVyb3ZpbnNraS9HSVQvd2Vla29mXzIwMjAuMDUuMThfRGF0YUNhbXBUdXRvcmlhbHMvdGlkeXZlcnNlMy5wbmcpCgoKRXhhbXBsZTogCmBgYHtyfQpsaWJyYXJ5KGdhcG1pbmRlcikKbGlicmFyeShkcGx5cikKCiMgRmlsdGVyIGZvciBDaGluYSBpbiAyMDAyCmdhcG1pbmRlciAlPiUKICBmaWx0ZXIoY291bnRyeSA9PSAiQ2hpbmEiLCB5ZWFyID09IDIwMDIpCmBgYAoKU29sdXRpb24gCgpgYGB7cn0KIyA+IGxpYnJhcnkoZ2FwbWluZGVyKQojID4gbGlicmFyeShkcGx5cikKIyA+IAojID4gIyBGaWx0ZXIgZm9yIENoaW5hIGluIDIwMDIKIyA+IGdhcG1pbmRlciAlPiUKIyAgICAgZmlsdGVyKGNvdW50cnkgPT0gIkNoaW5hIiwgeWVhciA9PSAyMDAyKQojICMgQSB0aWJibGU6IDEgeCA2CiMgICBjb3VudHJ5IGNvbnRpbmVudCAgeWVhciBsaWZlRXhwICAgICAgICBwb3AgZ2RwUGVyY2FwCiMgICA8ZmN0PiAgIDxmY3Q+ICAgICA8aW50PiAgIDxkYmw+ICAgICAgPGludD4gICAgIDxkYmw+CiMgMSBDaGluYSAgIEFzaWEgICAgICAgMjAwMiAgICA3Mi4wIDEyODA0MDAwMDAgICAgIDMxMTkuCmBgYAoKCgoKIVt0aWR5dmVyc2UgZmlndXJlNF0oL1VzZXJzL2thdGhlcmluZXJvdmluc2tpL0dJVC93ZWVrb2ZfMjAyMC4wNS4xOF9EYXRhQ2FtcFR1dG9yaWFscy90aWR5dmVyc2U0LnBuZykKCgohW3RpZHl2ZXJzZSBmaWd1cmU1XSgvVXNlcnMva2F0aGVyaW5lcm92aW5za2kvR0lUL3dlZWtvZl8yMDIwLjA1LjE4X0RhdGFDYW1wVHV0b3JpYWxzL3RpZHl2ZXJzZTUucG5nKQoKCiFbdGlkeXZlcnNlIGZpZ3VyZTNdKC9Vc2Vycy9rYXRoZXJpbmVyb3ZpbnNraS9HSVQvd2Vla29mXzIwMjAuMDUuMThfRGF0YUNhbXBUdXRvcmlhbHMvdGlkeXZlcnNlNi5wbmcpCgoKdGhlIGFycmFuZ2UgZnVuY3Rpb24gZGVmYXVsdHMgdG8gYWNjZW5kaW5nIG9yZGVyCgoKYGBge3J9CmxpYnJhcnkoZ2FwbWluZGVyKQpsaWJyYXJ5KGRwbHlyKQoKIyBTb3J0IGluIGFzY2VuZGluZyBvcmRlciBvZiBsaWZlRXhwCmdhcG1pbmRlciAlPiUKICBhcnJhbmdlKGxpZmVFeHApCiAgCiMgU29ydCBpbiBkZXNjZW5kaW5nIG9yZGVyIG9mIGxpZmVFeHAKZ2FwbWluZGVyICU+JQogIGFycmFuZ2UoZGVzYyhsaWZlRXhwKSkKYGBgCgoKCgojIDIuIE11dGF0ZSBGdW5jdGlvbgoKCgoKCgoKCgoKCgoKCgoKCgoKCg==</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiS2F0ZSdzIEZyZWUgV2VlayBhdCBDYW1wOiBEYXRhQ2FtcCwgSW50cm9kdWN0aW9uIHRvIHRoZSBUaWR5dmVyc2UiCm91dHB1dDogaHRtbF9ub3RlYm9vawotLS0KCgojIFRhYmxlIG9mIENvbnRlbnRzCjEuIEludHJvZHVjdGlvbgoyLiBGaWx0ZXIgVmVyYgozLiBwbGFjZWhvbGRlciB2ZWN0b3JzICYgbWF0cmljZXMKNC4gcGxhY2Vob2xkZXIgT3BlcmF0b3JzCjUuIHBsYWNlaG9sZGVyIHRoZSByZXN1bHQ6ICEKNi4gcGxhY2Vob2xkZXIgU3RhdGVtZW50cwo3LiBwbGFjZWhvbGRlciBMb29wCjguIHBsYWNlaG9sZGVyIExvb3AKOS4gcGxhY2Vob2xkZXIgCjEwLiBwbGFjZWhvbGRlciBZb3VyIG93biAgRnVuY3Rpb24KMTEuIFIgcGxhY2Vob2xkZXIKMTIuIHBsYWNlaG9sZGVyIEFwcGx5IGxhcHBseQoxMy4gcGxhY2Vob2xkZXIKMTQuIHBsYWNlaG9sZGVyCjE1LiBwbGFjZWhvbGRlciBGdW5jdGlvbnMKMTYuIHBsYWNlaG9sZGVyIEV4cHJlc3Npb25zIAoxNy4gcGxhY2Vob2xkZXIgVGltZSBPYmplY3RzCgoKIyAxLiBJbnRyb2R1Y3Rpb24gdG8gdGhlIFRpZHl2ZXJzZQoKIVt0aWR5dmVyc2UgZmlndXJlMV0oL1VzZXJzL2thdGhlcmluZXJvdmluc2tpL0dJVC93ZWVrb2ZfMjAyMC4wNS4xOF9EYXRhQ2FtcFR1dG9yaWFscy90aWR5dmVyc2UxLnBuZykKCiMgMi4gRmlsdGVyIFZlcmIKCmF0b21pYyBzdGVwIHlvdSB1c2UgdG8gZmlsdGVyIGRhdGEKCnlvdSB3aWxsIGFsd2F5cyBhY2NvbXBhbnkgaXQgd2l0aCBhIHBpcGUKCgohW3RpZHl2ZXJzZSBmaWd1cmUyXSgvVXNlcnMva2F0aGVyaW5lcm92aW5za2kvR0lUL3dlZWtvZl8yMDIwLjA1LjE4X0RhdGFDYW1wVHV0b3JpYWxzL3RpZHl2ZXJzZTIucG5nKQoKCiFbdGlkeXZlcnNlIGZpZ3VyZTNdKC9Vc2Vycy9rYXRoZXJpbmVyb3ZpbnNraS9HSVQvd2Vla29mXzIwMjAuMDUuMThfRGF0YUNhbXBUdXRvcmlhbHMvdGlkeXZlcnNlMy5wbmcpCgoKRXhhbXBsZTogCmBgYHtyfQpsaWJyYXJ5KGdhcG1pbmRlcikKbGlicmFyeShkcGx5cikKCiMgRmlsdGVyIGZvciBDaGluYSBpbiAyMDAyCmdhcG1pbmRlciAlPiUKICBmaWx0ZXIoY291bnRyeSA9PSAiQ2hpbmEiLCB5ZWFyID09IDIwMDIpCmBgYAoKU29sdXRpb24gCgpgYGB7cn0KIyA+IGxpYnJhcnkoZ2FwbWluZGVyKQojID4gbGlicmFyeShkcGx5cikKIyA+IAojID4gIyBGaWx0ZXIgZm9yIENoaW5hIGluIDIwMDIKIyA+IGdhcG1pbmRlciAlPiUKIyAgICAgZmlsdGVyKGNvdW50cnkgPT0gIkNoaW5hIiwgeWVhciA9PSAyMDAyKQojICMgQSB0aWJibGU6IDEgeCA2CiMgICBjb3VudHJ5IGNvbnRpbmVudCAgeWVhciBsaWZlRXhwICAgICAgICBwb3AgZ2RwUGVyY2FwCiMgICA8ZmN0PiAgIDxmY3Q+ICAgICA8aW50PiAgIDxkYmw+ICAgICAgPGludD4gICAgIDxkYmw+CiMgMSBDaGluYSAgIEFzaWEgICAgICAgMjAwMiAgICA3Mi4wIDEyODA0MDAwMDAgICAgIDMxMTkuCmBgYAoKCgoKIVt0aWR5dmVyc2UgZmlndXJlNF0oL1VzZXJzL2thdGhlcmluZXJvdmluc2tpL0dJVC93ZWVrb2ZfMjAyMC4wNS4xOF9EYXRhQ2FtcFR1dG9yaWFscy90aWR5dmVyc2U0LnBuZykKCgohW3RpZHl2ZXJzZSBmaWd1cmU1XSgvVXNlcnMva2F0aGVyaW5lcm92aW5za2kvR0lUL3dlZWtvZl8yMDIwLjA1LjE4X0RhdGFDYW1wVHV0b3JpYWxzL3RpZHl2ZXJzZTUucG5nKQoKCiFbdGlkeXZlcnNlIGZpZ3VyZTNdKC9Vc2Vycy9rYXRoZXJpbmVyb3ZpbnNraS9HSVQvd2Vla29mXzIwMjAuMDUuMThfRGF0YUNhbXBUdXRvcmlhbHMvdGlkeXZlcnNlNi5wbmcpCgoKdGhlIGFycmFuZ2UgZnVuY3Rpb24gZGVmYXVsdHMgdG8gYWNjZW5kaW5nIG9yZGVyCgoKYGBge3J9CmxpYnJhcnkoZ2FwbWluZGVyKQpsaWJyYXJ5KGRwbHlyKQoKIyBTb3J0IGluIGFzY2VuZGluZyBvcmRlciBvZiBsaWZlRXhwCmdhcG1pbmRlciAlPiUKICBhcnJhbmdlKGxpZmVFeHApCiAgCiMgU29ydCBpbiBkZXNjZW5kaW5nIG9yZGVyIG9mIGxpZmVFeHAKZ2FwbWluZGVyICU+JQogIGFycmFuZ2UoZGVzYyhsaWZlRXhwKSkKYGBgCgoKCgojIDIuIE11dGF0ZSBGdW5jdGlvbgoKeW91IGNyZWF0ZSBhIG5ldyB2YXJpYWJsZSBiYXNlZCBvbiBjZXJ0YWluIGNvbmRpdGlvbnMgaW4gZXhpc3RpbmcgdmFyaWFibGVzCgoKRXhhbXBsZQpgYGB7cn0KbGlicmFyeShnYXBtaW5kZXIpCmxpYnJhcnkoZHBseXIpCgojIFVzZSBtdXRhdGUgdG8gY2hhbmdlIGxpZmVFeHAgdG8gYmUgaW4gbW9udGhzCmdhcG1pbmRlciAlPiUKICBtdXRhdGUobGlmZUV4cCA9IGxpZmVFeHAgKiAxMikKCiMgVXNlIG11dGF0ZSB0byBjcmVhdGUgYSBuZXcgY29sdW1uIGNhbGxlZCBsaWZlRXhwTW9udGhzCmdhcG1pbmRlciAlPiUKICBtdXRhdGUobGlmZUV4cE1vbnRocyA9IGxpZmVFeHAgKiAxMikKYGBgCgoKU29sdXRpb24KCmBgYHtyfQojID4gbGlicmFyeShnYXBtaW5kZXIpCiMgPiBsaWJyYXJ5KGRwbHlyKQojID4gCiM+ICMgVXNlIG11dGF0ZSB0byBjaGFuZ2UgbGlmZUV4cCB0byBiZSBpbiBtb250aHMKIyA+IGdhcG1pbmRlciAlPiUKIyAgICAgbXV0YXRlKGxpZmVFeHAgPSBsaWZlRXhwICogMTIpCiMgIyBBIHRpYmJsZTogMSw3MDQgeCA2CiMgICAgY291bnRyeSAgICAgY29udGluZW50ICB5ZWFyIGxpZmVFeHAgICAgICBwb3AgZ2RwUGVyY2FwCiMgICAgPGZjdD4gICAgICAgPGZjdD4gICAgIDxpbnQ+ICAgPGRibD4gICAgPGludD4gICAgIDxkYmw+CiMgIDEgQWZnaGFuaXN0YW4gQXNpYSAgICAgICAxOTUyICAgIDM0Ni4gIDg0MjUzMzMgICAgICA3NzkuCiMgIDIgQWZnaGFuaXN0YW4gQXNpYSAgICAgICAxOTU3ICAgIDM2NC4gIDkyNDA5MzQgICAgICA4MjEuCiMgIDMgQWZnaGFuaXN0YW4gQXNpYSAgICAgICAxOTYyICAgIDM4NC4gMTAyNjcwODMgICAgICA4NTMuCiMgIDQgQWZnaGFuaXN0YW4gQXNpYSAgICAgICAxOTY3ICAgIDQwOC4gMTE1Mzc5NjYgICAgICA4MzYuCiMgIDUgQWZnaGFuaXN0YW4gQXNpYSAgICAgICAxOTcyICAgIDQzMy4gMTMwNzk0NjAgICAgICA3NDAuCiMgIDYgQWZnaGFuaXN0YW4gQXNpYSAgICAgICAxOTc3ICAgIDQ2MS4gMTQ4ODAzNzIgICAgICA3ODYuCiMgIDcgQWZnaGFuaXN0YW4gQXNpYSAgICAgICAxOTgyICAgIDQ3OC4gMTI4ODE4MTYgICAgICA5NzguCiMgIDggQWZnaGFuaXN0YW4gQXNpYSAgICAgICAxOTg3ICAgIDQ5MC4gMTM4Njc5NTcgICAgICA4NTIuCiMgIDkgQWZnaGFuaXN0YW4gQXNpYSAgICAgICAxOTkyICAgIDUwMC4gMTYzMTc5MjEgICAgICA2NDkuCiMgMTAgQWZnaGFuaXN0YW4gQXNpYSAgICAgICAxOTk3ICAgIDUwMS4gMjIyMjc0MTUgICAgICA2MzUuCiMgIyAuLi4gd2l0aCAxLDY5NCBtb3JlIHJvd3MKIyA+IAojID4gIyBVc2UgbXV0YXRlIHRvIGNyZWF0ZSBhIG5ldyBjb2x1bW4gY2FsbGVkIGxpZmVFeHBNb250aHMKIyA+IGdhcG1pbmRlciAlPiUKIyAgICAgbXV0YXRlKGxpZmVFeHBNb250aHMgPSBsaWZlRXhwICogMTIpCiMgIyBBIHRpYmJsZTogMSw3MDQgeCA3CiMgICAgY291bnRyeSAgICAgY29udGluZW50ICB5ZWFyIGxpZmVFeHAgICAgICBwb3AgZ2RwUGVyY2FwIGxpZmVFeHBNb250aHMKIyAgICA8ZmN0PiAgICAgICA8ZmN0PiAgICAgPGludD4gICA8ZGJsPiAgICA8aW50PiAgICAgPGRibD4gICAgICAgICA8ZGJsPgojICAxIEFmZ2hhbmlzdGFuIEFzaWEgICAgICAgMTk1MiAgICAyOC44ICA4NDI1MzMzICAgICAgNzc5LiAgICAgICAgICAzNDYuCiMgIDIgQWZnaGFuaXN0YW4gQXNpYSAgICAgICAxOTU3ICAgIDMwLjMgIDkyNDA5MzQgICAgICA4MjEuICAgICAgICAgIDM2NC4KIyAgMyBBZmdoYW5pc3RhbiBBc2lhICAgICAgIDE5NjIgICAgMzIuMCAxMDI2NzA4MyAgICAgIDg1My4gICAgICAgICAgMzg0LgojICA0IEFmZ2hhbmlzdGFuIEFzaWEgICAgICAgMTk2NyAgICAzNC4wIDExNTM3OTY2ICAgICAgODM2LiAgICAgICAgICA0MDguCiMgIDUgQWZnaGFuaXN0YW4gQXNpYSAgICAgICAxOTcyICAgIDM2LjEgMTMwNzk0NjAgICAgICA3NDAuICAgICAgICAgIDQzMy4KIyAgNiBBZmdoYW5pc3RhbiBBc2lhICAgICAgIDE5NzcgICAgMzguNCAxNDg4MDM3MiAgICAgIDc4Ni4gICAgICAgICAgNDYxLgojICA3IEFmZ2hhbmlzdGFuIEFzaWEgICAgICAgMTk4MiAgICAzOS45IDEyODgxODE2ICAgICAgOTc4LiAgICAgICAgICA0NzguCiMgIDggQWZnaGFuaXN0YW4gQXNpYSAgICAgICAxOTg3ICAgIDQwLjggMTM4Njc5NTcgICAgICA4NTIuICAgICAgICAgIDQ5MC4KIyAgOSBBZmdoYW5pc3RhbiBBc2lhICAgICAgIDE5OTIgICAgNDEuNyAxNjMxNzkyMSAgICAgIDY0OS4gICAgICAgICAgNTAwLgojIDEwIEFmZ2hhbmlzdGFuIEFzaWEgICAgICAgMTk5NyAgICA0MS44IDIyMjI3NDE1ICAgICAgNjM1LiAgICAgICAgICA1MDEuCiMgIyAuLi4gd2l0aCAxLDY5NCBtb3JlIHJvd3MKYGBgCgoKIyAzLiBnZ3Bsb3QyCgpUaGVyZSBhcmUgdGhyZWUgcGFydHMgdG8gYSBnZ3Bsb3QgZ3JhcGgKCmdlb20gcmVmZXJlcyB0byBhIHR5cGUgb2YgZ2VvbWV0cmljIG9iamVjdAoKRXhhbXBsZQpgYGB7cn0KbGlicmFyeShnYXBtaW5kZXIpCmxpYnJhcnkoZHBseXIpCmxpYnJhcnkoZ2dwbG90MikKCmdhcG1pbmRlcl8xOTUyIDwtIGdhcG1pbmRlciAlPiUKICBmaWx0ZXIoeWVhciA9PSAxOTUyKQoKIyBDcmVhdGUgYSBzY2F0dGVyIHBsb3Qgd2l0aCBwb3Agb24gdGhlIHgtYXhpcyBhbmQgbGlmZUV4cCBvbiB0aGUgeS1heGlzCmdncGxvdChnYXBtaW5kZXJfMTk1MiwgYWVzKHggPSBwb3AsIHkgPSBsaWZlRXhwKSkgKwogIGdlb21fcG9pbnQoKQpgYGAKClNvbHV0aW9uCgpgYGB7cn0KIyA+IGxpYnJhcnkoZ2FwbWluZGVyKQojID4gbGlicmFyeShkcGx5cikKIyA+IGxpYnJhcnkoZ2dwbG90MikKIyA+IAojID4gZ2FwbWluZGVyXzE5NTIgPC0gZ2FwbWluZGVyICU+JQojICAgICBmaWx0ZXIoeWVhciA9PSAxOTUyKQojID4gCiMgPiAjIENyZWF0ZSBhIHNjYXR0ZXIgcGxvdCB3aXRoIHBvcCBvbiB0aGUgeC1heGlzIGFuZCBsaWZlRXhwIG9uIHRoZSB5LWF4aXMKIyA+IGdncGxvdChnYXBtaW5kZXJfMTk1MiwgYWVzKHggPSBwb3AsIHkgPSBsaWZlRXhwKSkgKwojICAgICBnZW9tX3BvaW50KCkKYGBgCgozLjEgbG9ncyBhbmQgZ2dwbG90MgoKMy4yIGFkZGl0aW9uYWwgYWVzdGhpY3MgCgoKCgoKCgoKCgoKCgoK</div>
 
 
 
