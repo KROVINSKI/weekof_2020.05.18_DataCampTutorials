@@ -5,11 +5,11 @@ output: html_notebook
 
 
 # Table of Contents
-1. Introduction
-2. Filter Verb
-3. placeholder vectors & matrices
-4. placeholder Operators
-5. placeholder the result: !
+1. Introduction to the tidyverse
+2. Filter Verbs
+3. Mutate Function
+4. ggplot2
+5. summarize
 6. placeholder Statements
 7. placeholder Loop
 8. placeholder Loop
@@ -79,7 +79,7 @@ Solution
 
 
 the arrange function defaults to accending order
-
+Example:
 
 ```{r}
 library(gapminder)
@@ -95,12 +95,16 @@ gapminder %>%
 ```
 
 
-
-
-# 2. Mutate Function
+# 3. Mutate Function
 
 you create a new variable based on certain conditions in existing variables
 
+![tidyverse figure4](/Users/katherinerovinski/GIT/weekof_2020.05.18_DataCampTutorials/tidyverse7.png)
+
+![tidyverse figure5](/Users/katherinerovinski/GIT/weekof_2020.05.18_DataCampTutorials/tidyverse8.png)
+
+
+![tidyverse figure6](/Users/katherinerovinski/GIT/weekof_2020.05.18_DataCampTutorials/tidyverse10.png)
 
 Example
 ```{r}
@@ -115,7 +119,6 @@ gapminder %>%
 gapminder %>%
   mutate(lifeExpMonths = lifeExp * 12)
 ```
-
 
 Solution
 
@@ -161,11 +164,20 @@ Solution
 ```
 
 
-# 3. ggplot2
+# 4. ggplot2
+
+visualizing data with a graph
+
+![tidyverse figure7](/Users/katherinerovinski/GIT/weekof_2020.05.18_DataCampTutorials/tidyverse11.png)
+## 4.1 Overview of ggplots
 
 There are three parts to a ggplot graph
+the dataframe 
+the aesthetics
+the geometric object utilized
 
 geom referes to a type of geometric object
+
 
 Example
 ```{r}
@@ -196,17 +208,73 @@ Solution
 #     geom_point()
 ```
 
-3.1 logs and ggplot2
-
-3.2 additional aesthics 
+![tidyverse figure8](/Users/katherinerovinski/GIT/weekof_2020.05.18_DataCampTutorials/tidyverse12.png)
 
 
+## 4.2 log scales and ggplot2
+
+![tidyverse figure9](/Users/katherinerovinski/GIT/weekof_2020.05.18_DataCampTutorials/tidyverse13.png)
 
 
+## 4.3 additional aesthics 
 
 
+![tidyverse figure10](/Users/katherinerovinski/GIT/weekof_2020.05.18_DataCampTutorials/tidyverse14.png)
 
 
+### color doesn't have the letter u inside it
+
+## 4.4 Faceting
+
+![tidyverse figure10](/Users/katherinerovinski/GIT/weekof_2020.05.18_DataCampTutorials/tidyvserse15.png)
+
+
+# 5. Summarize
+
+![tidyverse figure11](/Users/katherinerovinski/GIT/weekof_2020.05.18_DataCampTutorials/tidyverse16.png)
+
+![tidyverse figure12](/Users/katherinerovinski/GIT/weekof_2020.05.18_DataCampTutorials/tidyverse18.png)
+note the new value totalPop after the comma
+
+![tidyverse figure14](/Users/katherinerovinski/GIT/weekof_2020.05.18_DataCampTutorials/tidyverse20.png)
+
+![tidyverse figure15](/Users/katherinerovinski/GIT/weekof_2020.05.18_DataCampTutorials/tidyverse21.png)
+
+
+Summarizing the median life expectancy
+You've seen how to find the mean life expectancy and the total population across a set of observations, but mean() and sum() are only two of the functions R provides for summarizing a collection of numbers. Here, you'll learn to use the median() function in combination with summarize().
+
+Example:
+```{r}
+library(gapminder)
+library(dplyr)
+
+# Summarize to find the median life expectancy
+gapminder %>%
+  summarize(medianLifeExp = median(lifeExp))
+```
+
+Console:
+```{r}
+# > library(gapminder)
+# > library(dplyr)
+# 
+# Attaching package: 'dplyr'
+# The following objects are masked from 'package:stats':
+# 
+#     filter, lag
+# The following objects are masked from 'package:base':
+# 
+#     intersect, setdiff, setequal, union
+# > 
+# > # Summarize to find the median life expectancy
+# > gapminder %>%
+#     summarize(medianLifeExp = median(lifeExp))
+# # A tibble: 1 x 1
+#   medianLifeExp
+#           <dbl>
+# 1          60.7
+```
 
 
 
