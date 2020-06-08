@@ -10,7 +10,7 @@ output: html_notebook
 3. Mutate Function
 4. ggplot2
 5. summarize
-6. placeholder Statements
+6. histograms
 7. placeholder Loop
 8. placeholder Loop
 9. placeholder 
@@ -229,6 +229,31 @@ Solution
 ![tidyverse figure10](/Users/katherinerovinski/GIT/weekof_2020.05.18_DataCampTutorials/tidyvserse15.png)
 
 
+
+![tidyverse figure16](/Users/katherinerovinski/GIT/weekof_2020.05.18_DataCampTutorials/tidyverse22.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # 5. Summarize
 
 ![tidyverse figure11](/Users/katherinerovinski/GIT/weekof_2020.05.18_DataCampTutorials/tidyverse16.png)
@@ -275,6 +300,174 @@ Console:
 #           <dbl>
 # 1          60.7
 ```
+
+example
+```{r}
+library(gapminder)
+library(dplyr)
+
+# Find median life expectancy and maximum GDP per capita in each continent in 1957
+gapminder %>%
+  filter(year == 1957) %>%
+  group_by(continent) %>%
+  summarize(medianLifeExp = median(lifeExp),
+            maxGdpPercap = max(gdpPercap))
+```
+
+console:
+```{r}
+# > library(gapminder)
+# > library(dplyr)
+# 
+# Attaching package: 'dplyr'
+# The following objects are masked from 'package:stats':
+# 
+#     filter, lag
+# The following objects are masked from 'package:base':
+# 
+#     intersect, setdiff, setequal, union
+# > 
+# > # Find median life expectancy and maximum GDP per capita in each continent in 1957
+# > gapminder %>%
+#     filter(year == 1957) %>%
+#     group_by(continent) %>%
+#     summarize(medianLifeExp = median(lifeExp),
+#               maxGdpPercap = max(gdpPercap))
+# # A tibble: 5 x 3
+#   continent medianLifeExp maxGdpPercap
+#   <fct>             <dbl>        <dbl>
+# 1 Africa             40.6        5487.
+# 2 Americas           56.1       14847.
+# 3 Asia               48.3      113523.
+# 4 Europe             67.6       17909.
+# 5 Oceania            70.3       12247.
+```
+
+
+
+![tidyverse figure17](/Users/katherinerovinski/GIT/weekof_2020.05.18_DataCampTutorials/tidyverse23.png)
+
+
+
+
+
+
+
+
+#6. Histograms 
+
+
+
+![tidyverse figure18](/Users/katherinerovinski/GIT/weekof_2020.05.18_DataCampTutorials/tidyverse24.png)
+
+
+![tidyverse figure19](/Users/katherinerovinski/GIT/weekof_2020.05.18_DataCampTutorials/tidyverse25.png)
+the geometric object is the histogram itself
+
+
+
+![tidyverse figure20](/Users/katherinerovinski/GIT/weekof_2020.05.18_DataCampTutorials/tidyverse26.png)
+
+example
+
+```{r}
+library(gapminder)
+library(dplyr)
+library(ggplot2)
+
+gapminder_1952 <- gapminder %>%
+  filter(year == 1952) %>%
+  mutate(pop_by_mil = pop / 1000000)
+
+# Create a histogram of population (pop_by_mil)
+ggplot(gapminder_1952, aes(x = pop_by_mil)) +
+  geom_histogram(bins = 50)
+```
+
+solution:
+
+```{r}
+# > library(gapminder)
+# > library(dplyr)
+# 
+# Attaching package: 'dplyr'
+# The following objects are masked from 'package:stats':
+# 
+#     filter, lag
+# The following objects are masked from 'package:base':
+# 
+#     intersect, setdiff, setequal, union
+# > library(ggplot2)
+# > 
+# > gapminder_1952 <- gapminder %>%
+#     filter(year == 1952) %>%
+#     mutate(pop_by_mil = pop / 1000000)
+# > 
+# > # Create a histogram of population (pop_by_mil)
+# > ggplot(gapminder_1952, aes(x = pop_by_mil)) +
+#     geom_histogram(bins = 50)
+```
+
+![tidyverse figure22](/Users/katherinerovinski/GIT/weekof_2020.05.18_DataCampTutorials/tidyverse27.png)
+
+
+# 7. Boxplots
+
+
+
+![tidyverse figure23](/Users/katherinerovinski/GIT/weekof_2020.05.18_DataCampTutorials/tidyverse28.png)
+
+
+example:
+```{r}
+library(gapminder)
+library(dplyr)
+library(ggplot2)
+
+gapminder_1952 <- gapminder %>%
+  filter(year == 1952)
+
+# Add a title to this graph: "Comparing GDP per capita across continents"
+ggplot(gapminder_1952, aes(x = continent, y = gdpPercap)) +
+  geom_boxplot() +
+  scale_y_log10() +
+  ggtitle("Comparing GDP per capita across continents")
+```
+
+
+solution
+
+```{r}
+# > library(gapminder)
+# > library(dplyr)
+# 
+# Attaching package: 'dplyr'
+# The following objects are masked from 'package:stats':
+# 
+#     filter, lag
+# The following objects are masked from 'package:base':
+# 
+#     intersect, setdiff, setequal, union
+# > library(ggplot2)
+# Need help getting started? Try the cookbook for R:
+# http://www.cookbook-r.com/Graphs/
+# > 
+# > gapminder_1952 <- gapminder %>%
+#     filter(year == 1952)
+# > 
+# > # Add a title to this graph: "Comparing GDP per capita across continents"
+# > ggplot(gapminder_1952, aes(x = continent, y = gdpPercap)) +
+#     geom_boxplot() +
+#     scale_y_log10() +
+#     ggtitle("Comparing GDP per capita across continents")
+```
+
+
+![tidyverse figure23](/Users/katherinerovinski/GIT/weekof_2020.05.18_DataCampTutorials/tidyverse28.png)
+
+
+
+
 
 
 
